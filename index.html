@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Оценка смеховой экспрессии</title>
-<script type="text/javascript" nonce="c53edc98d81240158e35b8d07b7" src="//local.adguard.org?ts=1777579976313&amp;type=content-script&amp;dmn=ppl-ai-code-interpreter-files.s3.amazonaws.com&amp;url=https%3A%2F%2Fppl-ai-code-interpreter-files.s3.amazonaws.com%2Fweb%2Fdirect-files%2F4b7c3ba3c8c9af6b499942dda96e8ff7%2Fb47a3bd5-1e0d-4d35-9ca3-840b42362818%2Fdc00970d.html%3Fresponse-content-disposition%3Dattachment%253B%2520filename%253D%2522survey.html%2522%253B%2520filename%252A%253DUTF-8%2527%2527survey.html%26AWSAccessKeyId%3DASIA2F3EMEYEZT4G6VQX%26Signature%3DKbCrMaQ7NHCBb3whGhypZSCozJ8%253D%26x-amz-security-token%3DIQoJb3JpZ2luX2VjEE0aCXVzLWVhc3QtMSJHMEUCIQDM55oLz97taDE1Saqt3uQbVjN%252B%252BFllmO%252Bu9SQfbmJpdQIgb3QxXfZK6uZdpSMIATzGZ4mJHqnrIZFDQ5Kgw9an2Agq8wQIFhABGgw2OTk3NTMzMDk3MDUiDAJIxsCNF0lLov2sdyrQBDUUc%252FuKcUKoQdq9dYj5C%252BJQH0u3TgJg9QzMmiQT53LEwIrl9p0olOkXvkdDVDnWz5OKsSgQ76Hivw5ovnx2rhmafphcvT%252FpcUHo4rxYIYwOD8NbYMj59CBUT9xwZaB3bsWN6Ncztt3%252B%252FSdMkRTyvXXpSOOXVpd7kQ6C0ThyFt59Yj%252FE93hCHAPrGIFMW4fULcwd8FvPdNEdy1XVUL3D7wj%252FD9CFMxRShk69b513jpl%252FdNawoWbXFNW1f40aQ9IohHlex4cKN0GOiyQi0mXPO%252BTJEigI2Mpi914CPxYmGaHt18gAhnL9QMzAyf%252BvHLTp78dVahAhELnU0eTy8Dh9i0Q3WzB7S5wFeDLirodm%252Bsp2%252BVv%252F7D1EqrTX6EYhP2SL6JbTOZn4MOIZCDt6EU5h9HuHjjwpl7P0eS70I4uUd7fqwJZTZE%252BagFBureuwjX58snyEebOuHqO9NYztRtJu3i5GDh5P0SvDXildgX6asvrW6Jl03QupPCx%252FiCfPsmdARS38swzOWbsOGAW3Te9nMM1KUta1PUl1x58ey3cebg2MR1MUcw0WORoOIsJGPjbqRKIFKciIkUHtFInP8670nJQNzlfCvP1DoTH4d7iTicsNKj0EGt0RMSHnmE2K%252Bg4ON%252BZKh55yF6q%252FUiZ%252BNMrEH0N2D75EfJOsXCX2O4FI0a69BlDmDIJAYv4J5p12JthycRNMRTwsIYW%252F4ofNFoZcus1A5Jvcw64T0PlCfD5DZ89nvTnBhTtDVpPBx14Qtg8HP37sF%252FCEZuJYPTiAZw4Mjrcwl%252FTOzwY6mAHBLM%252BTA2Psaz%252F6gSiRglv2HB4gjsdPTzWcwGcC6xxhiUq2TpMg%252F59pjHrHhIEwt7B%252BTwjKoYSwSFI%252FLkfyIdHsQ7evGQr2mDzGCKE5UI6ZS68HJ3PNAULpk5lRIuGixlR2ilkIYB1ALchy0Ce9DnACjE9blAemjvof8OpByHDyGsJj%252BkYYP0l6ZOppFO%252FS9E5SXYNhu%252BHhzQ%253D%253D%26Expires%3D1777582183&amp;app=com.google.Chrome&amp;css=3&amp;js=1&amp;rel=1&amp;rji=1&amp;sbe=1"></script><script type="text/javascript" nonce="c53edc98d81240158e35b8d07b7" src="//local.adguard.org?ts=1777579976313&amp;name=AdGuard%20Extra&amp;type=user-script"></script><link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
@@ -15,10 +15,6 @@ body{font-family:'Inter',sans-serif;background:var(--color-bg);color:var(--color
 header{text-align:center;margin-bottom:2rem}
 header h1{font-size:1.6rem;font-weight:700;margin-bottom:.4rem}
 header p{color:var(--color-text-muted);font-size:.93rem}
-.setup-notice{background:#fffbeb;border:2px solid #f59e0b;border-radius:var(--radius-lg);padding:1.2rem 1.5rem;margin-bottom:1.5rem}
-.setup-notice strong{color:#92400e;font-size:.95rem}
-.setup-notice ol{margin:.6rem 0 0 1.2rem;color:#78350f;font-size:.88rem;line-height:1.9}
-.setup-notice code{background:#fef3c7;border-radius:4px;padding:.1rem .4rem;font-size:.85rem;font-family:monospace}
 .respondent-block{background:var(--color-surface);border-radius:var(--radius-lg);box-shadow:var(--shadow-md);padding:1.25rem 1.5rem;margin-bottom:1.5rem}
 .respondent-block h3{font-size:.95rem;font-weight:700;margin-bottom:1rem;color:var(--color-primary)}
 .fields{display:grid;grid-template-columns:1fr 1fr;gap:.75rem}
@@ -67,18 +63,6 @@ audio{width:100%;border-radius:var(--radius-md)}
     <p>Прослушай каждую запись и ответь на вопросы</p>
   </header>
 
-  <div class="setup-notice">
-    <strong>⚙️ Настройка — сделайте один раз перед публикацией:</strong>
-    <ol>
-      <li>Создайте Google Таблицу на <strong>sheets.google.com</strong>, скопируйте её ID из адресной строки</li>
-      <li>Зайдите на <strong>script.google.com</strong>, создайте новый проект, вставьте код из файла <code>google-script.js</code></li>
-      <li>Вставьте ID таблицы в скрипт вместо <code>ВАШ_ID_ТАБЛИЦЫ</code></li>
-      <li>Нажмите <strong>Развернуть → Новое развёртывание → Веб-приложение → Доступ: Все</strong></li>
-      <li>Скопируйте URL скрипта и вставьте в этот файл вместо <code>https://script.google.com/home/projects/1Ou4FmErRUWAzHZEUev7aOzwgJlkrptwO-lujR2UH4qZm-dybAgCnfteb/edit</code></li>
-      <li>Выложите файлы на <strong>GitHub Pages</strong></li>
-    </ol>
-  </div>
-
   <form id="survey" onsubmit="submitForm(event)">
     <div class="respondent-block">
       <h3>👤 Данные участника</h3>
@@ -105,805 +89,193 @@ audio{width:100%;border-radius:var(--radius-md)}
       <div class="progress-label" id="progressLabel">0 из 10 блоков заполнено</div>
     </div>
 
-
-  <div class="laugh-block">
-    <div class="laugh-header">
-      <div class="laugh-number">1</div>
-      <h2>Смех 1</h2>
-    </div>
+  <div class="laugh-block" id="laugh1">
+    <div class="laugh-header"><div class="laugh-number">1</div><h2>Смех 1</h2></div>
     <div class="audio-section">
       <div class="audio-label">🎧 Аудиозапись</div>
-      <audio controls>
-        <source src="laugh1.mp3" type="audio/mpeg">
-        Ваш браузер не поддерживает аудио.
-      </audio>
+      <audio controls><source src="laugh1.mp3" type="audio/mpeg">Ваш браузер не поддерживает аудио.</audio>
       <div class="audio-upload-hint">Файл: <b>laugh1.mp3</b></div>
     </div>
     <div class="questions">
-      <div class="question">
-        <div class="question-title">Какой этот смех?</div>
-        <div class="options">
-          <label class="option"><input type="radio" name="Смех1_тип" value="Добрый" required><span>Добрый</span></label>
-          <label class="option"><input type="radio" name="Смех1_тип" value="Нейтральный"><span>Нейтральный</span></label>
-          <label class="option"><input type="radio" name="Смех1_тип" value="Злой"><span>Злой</span></label>
-        </div>
-      </div>
-      <div class="question">
-        <div class="question-title">Как тебе этот смех?</div>
-        <div class="options">
-          <label class="option"><input type="radio" name="Смех1_ощущение" value="Приятный" required><span>Приятный</span></label>
-          <label class="option"><input type="radio" name="Смех1_ощущение" value="Нейтральный"><span>Нейтральный</span></label>
-          <label class="option"><input type="radio" name="Смех1_ощущение" value="Неприятный"><span>Неприятный</span></label>
-        </div>
-      </div>
-      <div class="question">
-        <div class="question-title">Хочется ли тебе улыбнуться или засмеяться вместе?</div>
-        <div class="options">
-          <label class="option"><input type="radio" name="Смех1_улыбка" value="Да" required><span>Да</span></label>
-          <label class="option"><input type="radio" name="Смех1_улыбка" value="Нет"><span>Нет</span></label>
-        </div>
-      </div>
-      <div class="question">
-        <div class="question-title">Чей это смех?</div>
-        <div class="options">
-          <label class="option"><input type="checkbox" name="Смех1_чей" value="Ребёнка"><span>Ребёнка</span></label>
-          <label class="option"><input type="checkbox" name="Смех1_чей" value="Мужчины"><span>Мужчины</span></label>
-          <label class="option"><input type="checkbox" name="Смех1_чей" value="Женщины"><span>Женщины</span></label>
-          <label class="option"><input type="checkbox" name="Смех1_чей" value="Толпы"><span>Толпы</span></label>
-          <label class="option"><input type="checkbox" name="Смех1_чей" value="Выдуманного персонажа"><span>Выдуманного персонажа</span></label>
-        </div>
-      </div>
-      <div class="question">
-        <div class="question-title">Сколько людей смеётся?</div>
-        <div class="options">
-          <label class="option"><input type="radio" name="Смех1_количество" value="1" required><span>1</span></label>
-          <label class="option"><input type="radio" name="Смех1_количество" value="2"><span>2</span></label>
-          <label class="option"><input type="radio" name="Смех1_количество" value="3"><span>3</span></label>
-          <label class="option"><input type="radio" name="Смех1_количество" value="Толпа"><span>Толпа</span></label>
-        </div>
-      </div>
-      <div class="question">
-        <div class="question-title">Как ты думаешь, ему/ей весело или он/она притворяется?</div>
-        <div class="options">
-          <label class="option"><input type="radio" name="Смех1_искренность" value="Весело" required><span>Весело</span></label>
-          <label class="option"><input type="radio" name="Смех1_искренность" value="Притворяется"><span>Притворяется</span></label>
-        </div>
-      </div>
-      <div class="question">
-        <div class="question-title">Он смеётся над кем-то или просто так? Почему он смеётся?</div>
-        <div class="options" style="margin-bottom:0.6rem">
-          <label class="option"><input type="radio" name="Смех1_над_кем" value="Над кем-то" required><span>Над кем-то</span></label>
-          <label class="option"><input type="radio" name="Смех1_над_кем" value="Просто так"><span>Просто так</span></label>
-        </div>
-        <textarea class="text-input" name="Смех1_почему" placeholder="Почему он смеётся?"></textarea>
-      </div>
-      <div class="question">
-        <div class="question-title">Хотел бы ты быть рядом с этим человеком?</div>
-        <div class="options">
-          <label class="option"><input type="radio" name="Смех1_рядом" value="Да" required><span>Да</span></label>
-          <label class="option"><input type="radio" name="Смех1_рядом" value="Нет"><span>Нет</span></label>
-        </div>
-      </div>
+      <div class="question"><div class="question-title">Какой этот смех?</div><div class="options"><label class="option"><input type="radio" name="Смех1_тип" value="Добрый" required><span>Добрый</span></label><label class="option"><input type="radio" name="Смех1_тип" value="Нейтральный"><span>Нейтральный</span></label><label class="option"><input type="radio" name="Смех1_тип" value="Злой"><span>Злой</span></label></div></div>
+      <div class="question"><div class="question-title">Как тебе этот смех?</div><div class="options"><label class="option"><input type="radio" name="Смех1_ощущение" value="Приятный" required><span>Приятный</span></label><label class="option"><input type="radio" name="Смех1_ощущение" value="Нейтральный"><span>Нейтральный</span></label><label class="option"><input type="radio" name="Смех1_ощущение" value="Неприятный"><span>Неприятный</span></label></div></div>
+      <div class="question"><div class="question-title">Хочется ли тебе улыбнуться или засмеяться вместе?</div><div class="options"><label class="option"><input type="radio" name="Смех1_улыбка" value="Да" required><span>Да</span></label><label class="option"><input type="radio" name="Смех1_улыбка" value="Нет"><span>Нет</span></label></div></div>
+      <div class="question"><div class="question-title">Чей это смех?</div><div class="options"><label class="option"><input type="checkbox" name="Смех1_чей" value="Ребёнка"><span>Ребёнка</span></label><label class="option"><input type="checkbox" name="Смех1_чей" value="Мужчины"><span>Мужчины</span></label><label class="option"><input type="checkbox" name="Смех1_чей" value="Женщины"><span>Женщины</span></label><label class="option"><input type="checkbox" name="Смех1_чей" value="Толпы"><span>Толпы</span></label><label class="option"><input type="checkbox" name="Смех1_чей" value="Выдуманного персонажа"><span>Выдуманного персонажа</span></label></div></div>
+      <div class="question"><div class="question-title">Сколько людей смеётся?</div><div class="options"><label class="option"><input type="radio" name="Смех1_количество" value="1" required><span>1</span></label><label class="option"><input type="radio" name="Смех1_количество" value="2"><span>2</span></label><label class="option"><input type="radio" name="Смех1_количество" value="3"><span>3</span></label><label class="option"><input type="radio" name="Смех1_количество" value="Толпа"><span>Толпа</span></label></div></div>
+      <div class="question"><div class="question-title">Как ты думаешь, ему/ей весело или он/она притворяется?</div><div class="options"><label class="option"><input type="radio" name="Смех1_искренность" value="Весело" required><span>Весело</span></label><label class="option"><input type="radio" name="Смех1_искренность" value="Притворяется"><span>Притворяется</span></label></div></div>
+      <div class="question"><div class="question-title">Он смеётся над кем-то или просто так? Почему он смеётся?</div><div class="options" style="margin-bottom:0.6rem"><label class="option"><input type="radio" name="Смех1_над_кем" value="Над кем-то" required><span>Над кем-то</span></label><label class="option"><input type="radio" name="Смех1_над_кем" value="Просто так"><span>Просто так</span></label></div><textarea class="text-input" name="Смех1_почему" placeholder="Почему он смеётся?"></textarea></div>
+      <div class="question"><div class="question-title">Хотел бы ты быть рядом с этим человеком?</div><div class="options"><label class="option"><input type="radio" name="Смех1_рядом" value="Да" required><span>Да</span></label><label class="option"><input type="radio" name="Смех1_рядом" value="Нет"><span>Нет</span></label></div></div>
     </div>
   </div>
-  <div class="laugh-block">
-    <div class="laugh-header">
-      <div class="laugh-number">2</div>
-      <h2>Смех 2</h2>
-    </div>
+
+  <div class="laugh-block" id="laugh2">
+    <div class="laugh-header"><div class="laugh-number">2</div><h2>Смех 2</h2></div>
     <div class="audio-section">
       <div class="audio-label">🎧 Аудиозапись</div>
-      <audio controls>
-        <source src="laugh2.mp3" type="audio/mpeg">
-        Ваш браузер не поддерживает аудио.
-      </audio>
+      <audio controls><source src="laugh2.mp3" type="audio/mpeg">Ваш браузер не поддерживает аудио.</audio>
       <div class="audio-upload-hint">Файл: <b>laugh2.mp3</b></div>
     </div>
     <div class="questions">
-      <div class="question">
-        <div class="question-title">Какой этот смех?</div>
-        <div class="options">
-          <label class="option"><input type="radio" name="Смех2_тип" value="Добрый" required><span>Добрый</span></label>
-          <label class="option"><input type="radio" name="Смех2_тип" value="Нейтральный"><span>Нейтральный</span></label>
-          <label class="option"><input type="radio" name="Смех2_тип" value="Злой"><span>Злой</span></label>
-        </div>
-      </div>
-      <div class="question">
-        <div class="question-title">Как тебе этот смех?</div>
-        <div class="options">
-          <label class="option"><input type="radio" name="Смех2_ощущение" value="Приятный" required><span>Приятный</span></label>
-          <label class="option"><input type="radio" name="Смех2_ощущение" value="Нейтральный"><span>Нейтральный</span></label>
-          <label class="option"><input type="radio" name="Смех2_ощущение" value="Неприятный"><span>Неприятный</span></label>
-        </div>
-      </div>
-      <div class="question">
-        <div class="question-title">Хочется ли тебе улыбнуться или засмеяться вместе?</div>
-        <div class="options">
-          <label class="option"><input type="radio" name="Смех2_улыбка" value="Да" required><span>Да</span></label>
-          <label class="option"><input type="radio" name="Смех2_улыбка" value="Нет"><span>Нет</span></label>
-        </div>
-      </div>
-      <div class="question">
-        <div class="question-title">Чей это смех?</div>
-        <div class="options">
-          <label class="option"><input type="checkbox" name="Смех2_чей" value="Ребёнка"><span>Ребёнка</span></label>
-          <label class="option"><input type="checkbox" name="Смех2_чей" value="Мужчины"><span>Мужчины</span></label>
-          <label class="option"><input type="checkbox" name="Смех2_чей" value="Женщины"><span>Женщины</span></label>
-          <label class="option"><input type="checkbox" name="Смех2_чей" value="Толпы"><span>Толпы</span></label>
-          <label class="option"><input type="checkbox" name="Смех2_чей" value="Выдуманного персонажа"><span>Выдуманного персонажа</span></label>
-        </div>
-      </div>
-      <div class="question">
-        <div class="question-title">Сколько людей смеётся?</div>
-        <div class="options">
-          <label class="option"><input type="radio" name="Смех2_количество" value="1" required><span>1</span></label>
-          <label class="option"><input type="radio" name="Смех2_количество" value="2"><span>2</span></label>
-          <label class="option"><input type="radio" name="Смех2_количество" value="3"><span>3</span></label>
-          <label class="option"><input type="radio" name="Смех2_количество" value="Толпа"><span>Толпа</span></label>
-        </div>
-      </div>
-      <div class="question">
-        <div class="question-title">Как ты думаешь, ему/ей весело или он/она притворяется?</div>
-        <div class="options">
-          <label class="option"><input type="radio" name="Смех2_искренность" value="Весело" required><span>Весело</span></label>
-          <label class="option"><input type="radio" name="Смех2_искренность" value="Притворяется"><span>Притворяется</span></label>
-        </div>
-      </div>
-      <div class="question">
-        <div class="question-title">Он смеётся над кем-то или просто так? Почему он смеётся?</div>
-        <div class="options" style="margin-bottom:0.6rem">
-          <label class="option"><input type="radio" name="Смех2_над_кем" value="Над кем-то" required><span>Над кем-то</span></label>
-          <label class="option"><input type="radio" name="Смех2_над_кем" value="Просто так"><span>Просто так</span></label>
-        </div>
-        <textarea class="text-input" name="Смех2_почему" placeholder="Почему он смеётся?"></textarea>
-      </div>
-      <div class="question">
-        <div class="question-title">Хотел бы ты быть рядом с этим человеком?</div>
-        <div class="options">
-          <label class="option"><input type="radio" name="Смех2_рядом" value="Да" required><span>Да</span></label>
-          <label class="option"><input type="radio" name="Смех2_рядом" value="Нет"><span>Нет</span></label>
-        </div>
-      </div>
+      <div class="question"><div class="question-title">Какой этот смех?</div><div class="options"><label class="option"><input type="radio" name="Смех2_тип" value="Добрый" required><span>Добрый</span></label><label class="option"><input type="radio" name="Смех2_тип" value="Нейтральный"><span>Нейтральный</span></label><label class="option"><input type="radio" name="Смех2_тип" value="Злой"><span>Злой</span></label></div></div>
+      <div class="question"><div class="question-title">Как тебе этот смех?</div><div class="options"><label class="option"><input type="radio" name="Смех2_ощущение" value="Приятный" required><span>Приятный</span></label><label class="option"><input type="radio" name="Смех2_ощущение" value="Нейтральный"><span>Нейтральный</span></label><label class="option"><input type="radio" name="Смех2_ощущение" value="Неприятный"><span>Неприятный</span></label></div></div>
+      <div class="question"><div class="question-title">Хочется ли тебе улыбнуться или засмеяться вместе?</div><div class="options"><label class="option"><input type="radio" name="Смех2_улыбка" value="Да" required><span>Да</span></label><label class="option"><input type="radio" name="Смех2_улыбка" value="Нет"><span>Нет</span></label></div></div>
+      <div class="question"><div class="question-title">Чей это смех?</div><div class="options"><label class="option"><input type="checkbox" name="Смех2_чей" value="Ребёнка"><span>Ребёнка</span></label><label class="option"><input type="checkbox" name="Смех2_чей" value="Мужчины"><span>Мужчины</span></label><label class="option"><input type="checkbox" name="Смех2_чей" value="Женщины"><span>Женщины</span></label><label class="option"><input type="checkbox" name="Смех2_чей" value="Толпы"><span>Толпы</span></label><label class="option"><input type="checkbox" name="Смех2_чей" value="Выдуманного персонажа"><span>Выдуманного персонажа</span></label></div></div>
+      <div class="question"><div class="question-title">Сколько людей смеётся?</div><div class="options"><label class="option"><input type="radio" name="Смех2_количество" value="1" required><span>1</span></label><label class="option"><input type="radio" name="Смех2_количество" value="2"><span>2</span></label><label class="option"><input type="radio" name="Смех2_количество" value="3"><span>3</span></label><label class="option"><input type="radio" name="Смех2_количество" value="Толпа"><span>Толпа</span></label></div></div>
+      <div class="question"><div class="question-title">Как ты думаешь, ему/ей весело или он/она притворяется?</div><div class="options"><label class="option"><input type="radio" name="Смех2_искренность" value="Весело" required><span>Весело</span></label><label class="option"><input type="radio" name="Смех2_искренность" value="Притворяется"><span>Притворяется</span></label></div></div>
+      <div class="question"><div class="question-title">Он смеётся над кем-то или просто так? Почему он смеётся?</div><div class="options" style="margin-bottom:0.6rem"><label class="option"><input type="radio" name="Смех2_над_кем" value="Над кем-то" required><span>Над кем-то</span></label><label class="option"><input type="radio" name="Смех2_над_кем" value="Просто так"><span>Просто так</span></label></div><textarea class="text-input" name="Смех2_почему" placeholder="Почему он смеётся?"></textarea></div>
+      <div class="question"><div class="question-title">Хотел бы ты быть рядом с этим человеком?</div><div class="options"><label class="option"><input type="radio" name="Смех2_рядом" value="Да" required><span>Да</span></label><label class="option"><input type="radio" name="Смех2_рядом" value="Нет"><span>Нет</span></label></div></div>
     </div>
   </div>
-  <div class="laugh-block">
-    <div class="laugh-header">
-      <div class="laugh-number">3</div>
-      <h2>Смех 3</h2>
-    </div>
+
+  <div class="laugh-block" id="laugh3">
+    <div class="laugh-header"><div class="laugh-number">3</div><h2>Смех 3</h2></div>
     <div class="audio-section">
       <div class="audio-label">🎧 Аудиозапись</div>
-      <audio controls>
-        <source src="laugh3.mp3" type="audio/mpeg">
-        Ваш браузер не поддерживает аудио.
-      </audio>
+      <audio controls><source src="laugh3.mp3" type="audio/mpeg">Ваш браузер не поддерживает аудио.</audio>
       <div class="audio-upload-hint">Файл: <b>laugh3.mp3</b></div>
     </div>
     <div class="questions">
-      <div class="question">
-        <div class="question-title">Какой этот смех?</div>
-        <div class="options">
-          <label class="option"><input type="radio" name="Смех3_тип" value="Добрый" required><span>Добрый</span></label>
-          <label class="option"><input type="radio" name="Смех3_тип" value="Нейтральный"><span>Нейтральный</span></label>
-          <label class="option"><input type="radio" name="Смех3_тип" value="Злой"><span>Злой</span></label>
-        </div>
-      </div>
-      <div class="question">
-        <div class="question-title">Как тебе этот смех?</div>
-        <div class="options">
-          <label class="option"><input type="radio" name="Смех3_ощущение" value="Приятный" required><span>Приятный</span></label>
-          <label class="option"><input type="radio" name="Смех3_ощущение" value="Нейтральный"><span>Нейтральный</span></label>
-          <label class="option"><input type="radio" name="Смех3_ощущение" value="Неприятный"><span>Неприятный</span></label>
-        </div>
-      </div>
-      <div class="question">
-        <div class="question-title">Хочется ли тебе улыбнуться или засмеяться вместе?</div>
-        <div class="options">
-          <label class="option"><input type="radio" name="Смех3_улыбка" value="Да" required><span>Да</span></label>
-          <label class="option"><input type="radio" name="Смех3_улыбка" value="Нет"><span>Нет</span></label>
-        </div>
-      </div>
-      <div class="question">
-        <div class="question-title">Чей это смех?</div>
-        <div class="options">
-          <label class="option"><input type="checkbox" name="Смех3_чей" value="Ребёнка"><span>Ребёнка</span></label>
-          <label class="option"><input type="checkbox" name="Смех3_чей" value="Мужчины"><span>Мужчины</span></label>
-          <label class="option"><input type="checkbox" name="Смех3_чей" value="Женщины"><span>Женщины</span></label>
-          <label class="option"><input type="checkbox" name="Смех3_чей" value="Толпы"><span>Толпы</span></label>
-          <label class="option"><input type="checkbox" name="Смех3_чей" value="Выдуманного персонажа"><span>Выдуманного персонажа</span></label>
-        </div>
-      </div>
-      <div class="question">
-        <div class="question-title">Сколько людей смеётся?</div>
-        <div class="options">
-          <label class="option"><input type="radio" name="Смех3_количество" value="1" required><span>1</span></label>
-          <label class="option"><input type="radio" name="Смех3_количество" value="2"><span>2</span></label>
-          <label class="option"><input type="radio" name="Смех3_количество" value="3"><span>3</span></label>
-          <label class="option"><input type="radio" name="Смех3_количество" value="Толпа"><span>Толпа</span></label>
-        </div>
-      </div>
-      <div class="question">
-        <div class="question-title">Как ты думаешь, ему/ей весело или он/она притворяется?</div>
-        <div class="options">
-          <label class="option"><input type="radio" name="Смех3_искренность" value="Весело" required><span>Весело</span></label>
-          <label class="option"><input type="radio" name="Смех3_искренность" value="Притворяется"><span>Притворяется</span></label>
-        </div>
-      </div>
-      <div class="question">
-        <div class="question-title">Он смеётся над кем-то или просто так? Почему он смеётся?</div>
-        <div class="options" style="margin-bottom:0.6rem">
-          <label class="option"><input type="radio" name="Смех3_над_кем" value="Над кем-то" required><span>Над кем-то</span></label>
-          <label class="option"><input type="radio" name="Смех3_над_кем" value="Просто так"><span>Просто так</span></label>
-        </div>
-        <textarea class="text-input" name="Смех3_почему" placeholder="Почему он смеётся?"></textarea>
-      </div>
-      <div class="question">
-        <div class="question-title">Хотел бы ты быть рядом с этим человеком?</div>
-        <div class="options">
-          <label class="option"><input type="radio" name="Смех3_рядом" value="Да" required><span>Да</span></label>
-          <label class="option"><input type="radio" name="Смех3_рядом" value="Нет"><span>Нет</span></label>
-        </div>
-      </div>
+      <div class="question"><div class="question-title">Какой этот смех?</div><div class="options"><label class="option"><input type="radio" name="Смех3_тип" value="Добрый" required><span>Добрый</span></label><label class="option"><input type="radio" name="Смех3_тип" value="Нейтральный"><span>Нейтральный</span></label><label class="option"><input type="radio" name="Смех3_тип" value="Злой"><span>Злой</span></label></div></div>
+      <div class="question"><div class="question-title">Как тебе этот смех?</div><div class="options"><label class="option"><input type="radio" name="Смех3_ощущение" value="Приятный" required><span>Приятный</span></label><label class="option"><input type="radio" name="Смех3_ощущение" value="Нейтральный"><span>Нейтральный</span></label><label class="option"><input type="radio" name="Смех3_ощущение" value="Неприятный"><span>Неприятный</span></label></div></div>
+      <div class="question"><div class="question-title">Хочется ли тебе улыбнуться или засмеяться вместе?</div><div class="options"><label class="option"><input type="radio" name="Смех3_улыбка" value="Да" required><span>Да</span></label><label class="option"><input type="radio" name="Смех3_улыбка" value="Нет"><span>Нет</span></label></div></div>
+      <div class="question"><div class="question-title">Чей это смех?</div><div class="options"><label class="option"><input type="checkbox" name="Смех3_чей" value="Ребёнка"><span>Ребёнка</span></label><label class="option"><input type="checkbox" name="Смех3_чей" value="Мужчины"><span>Мужчины</span></label><label class="option"><input type="checkbox" name="Смех3_чей" value="Женщины"><span>Женщины</span></label><label class="option"><input type="checkbox" name="Смех3_чей" value="Толпы"><span>Толпы</span></label><label class="option"><input type="checkbox" name="Смех3_чей" value="Выдуманного персонажа"><span>Выдуманного персонажа</span></label></div></div>
+      <div class="question"><div class="question-title">Сколько людей смеётся?</div><div class="options"><label class="option"><input type="radio" name="Смех3_количество" value="1" required><span>1</span></label><label class="option"><input type="radio" name="Смех3_количество" value="2"><span>2</span></label><label class="option"><input type="radio" name="Смех3_количество" value="3"><span>3</span></label><label class="option"><input type="radio" name="Смех3_количество" value="Толпа"><span>Толпа</span></label></div></div>
+      <div class="question"><div class="question-title">Как ты думаешь, ему/ей весело или он/она притворяется?</div><div class="options"><label class="option"><input type="radio" name="Смех3_искренность" value="Весело" required><span>Весело</span></label><label class="option"><input type="radio" name="Смех3_искренность" value="Притворяется"><span>Притворяется</span></label></div></div>
+      <div class="question"><div class="question-title">Он смеётся над кем-то или просто так? Почему он смеётся?</div><div class="options" style="margin-bottom:0.6rem"><label class="option"><input type="radio" name="Смех3_над_кем" value="Над кем-то" required><span>Над кем-то</span></label><label class="option"><input type="radio" name="Смех3_над_кем" value="Просто так"><span>Просто так</span></label></div><textarea class="text-input" name="Смех3_почему" placeholder="Почему он смеётся?"></textarea></div>
+      <div class="question"><div class="question-title">Хотел бы ты быть рядом с этим человеком?</div><div class="options"><label class="option"><input type="radio" name="Смех3_рядом" value="Да" required><span>Да</span></label><label class="option"><input type="radio" name="Смех3_рядом" value="Нет"><span>Нет</span></label></div></div>
     </div>
   </div>
-  <div class="laugh-block">
-    <div class="laugh-header">
-      <div class="laugh-number">4</div>
-      <h2>Смех 4</h2>
-    </div>
+
+  <div class="laugh-block" id="laugh4">
+    <div class="laugh-header"><div class="laugh-number">4</div><h2>Смех 4</h2></div>
     <div class="audio-section">
       <div class="audio-label">🎧 Аудиозапись</div>
-      <audio controls>
-        <source src="laugh4.mp3" type="audio/mpeg">
-        Ваш браузер не поддерживает аудио.
-      </audio>
+      <audio controls><source src="laugh4.mp3" type="audio/mpeg">Ваш браузер не поддерживает аудио.</audio>
       <div class="audio-upload-hint">Файл: <b>laugh4.mp3</b></div>
     </div>
     <div class="questions">
-      <div class="question">
-        <div class="question-title">Какой этот смех?</div>
-        <div class="options">
-          <label class="option"><input type="radio" name="Смех4_тип" value="Добрый" required><span>Добрый</span></label>
-          <label class="option"><input type="radio" name="Смех4_тип" value="Нейтральный"><span>Нейтральный</span></label>
-          <label class="option"><input type="radio" name="Смех4_тип" value="Злой"><span>Злой</span></label>
-        </div>
-      </div>
-      <div class="question">
-        <div class="question-title">Как тебе этот смех?</div>
-        <div class="options">
-          <label class="option"><input type="radio" name="Смех4_ощущение" value="Приятный" required><span>Приятный</span></label>
-          <label class="option"><input type="radio" name="Смех4_ощущение" value="Нейтральный"><span>Нейтральный</span></label>
-          <label class="option"><input type="radio" name="Смех4_ощущение" value="Неприятный"><span>Неприятный</span></label>
-        </div>
-      </div>
-      <div class="question">
-        <div class="question-title">Хочется ли тебе улыбнуться или засмеяться вместе?</div>
-        <div class="options">
-          <label class="option"><input type="radio" name="Смех4_улыбка" value="Да" required><span>Да</span></label>
-          <label class="option"><input type="radio" name="Смех4_улыбка" value="Нет"><span>Нет</span></label>
-        </div>
-      </div>
-      <div class="question">
-        <div class="question-title">Чей это смех?</div>
-        <div class="options">
-          <label class="option"><input type="checkbox" name="Смех4_чей" value="Ребёнка"><span>Ребёнка</span></label>
-          <label class="option"><input type="checkbox" name="Смех4_чей" value="Мужчины"><span>Мужчины</span></label>
-          <label class="option"><input type="checkbox" name="Смех4_чей" value="Женщины"><span>Женщины</span></label>
-          <label class="option"><input type="checkbox" name="Смех4_чей" value="Толпы"><span>Толпы</span></label>
-          <label class="option"><input type="checkbox" name="Смех4_чей" value="Выдуманного персонажа"><span>Выдуманного персонажа</span></label>
-        </div>
-      </div>
-      <div class="question">
-        <div class="question-title">Сколько людей смеётся?</div>
-        <div class="options">
-          <label class="option"><input type="radio" name="Смех4_количество" value="1" required><span>1</span></label>
-          <label class="option"><input type="radio" name="Смех4_количество" value="2"><span>2</span></label>
-          <label class="option"><input type="radio" name="Смех4_количество" value="3"><span>3</span></label>
-          <label class="option"><input type="radio" name="Смех4_количество" value="Толпа"><span>Толпа</span></label>
-        </div>
-      </div>
-      <div class="question">
-        <div class="question-title">Как ты думаешь, ему/ей весело или он/она притворяется?</div>
-        <div class="options">
-          <label class="option"><input type="radio" name="Смех4_искренность" value="Весело" required><span>Весело</span></label>
-          <label class="option"><input type="radio" name="Смех4_искренность" value="Притворяется"><span>Притворяется</span></label>
-        </div>
-      </div>
-      <div class="question">
-        <div class="question-title">Он смеётся над кем-то или просто так? Почему он смеётся?</div>
-        <div class="options" style="margin-bottom:0.6rem">
-          <label class="option"><input type="radio" name="Смех4_над_кем" value="Над кем-то" required><span>Над кем-то</span></label>
-          <label class="option"><input type="radio" name="Смех4_над_кем" value="Просто так"><span>Просто так</span></label>
-        </div>
-        <textarea class="text-input" name="Смех4_почему" placeholder="Почему он смеётся?"></textarea>
-      </div>
-      <div class="question">
-        <div class="question-title">Хотел бы ты быть рядом с этим человеком?</div>
-        <div class="options">
-          <label class="option"><input type="radio" name="Смех4_рядом" value="Да" required><span>Да</span></label>
-          <label class="option"><input type="radio" name="Смех4_рядом" value="Нет"><span>Нет</span></label>
-        </div>
-      </div>
+      <div class="question"><div class="question-title">Какой этот смех?</div><div class="options"><label class="option"><input type="radio" name="Смех4_тип" value="Добрый" required><span>Добрый</span></label><label class="option"><input type="radio" name="Смех4_тип" value="Нейтральный"><span>Нейтральный</span></label><label class="option"><input type="radio" name="Смех4_тип" value="Злой"><span>Злой</span></label></div></div>
+      <div class="question"><div class="question-title">Как тебе этот смех?</div><div class="options"><label class="option"><input type="radio" name="Смех4_ощущение" value="Приятный" required><span>Приятный</span></label><label class="option"><input type="radio" name="Смех4_ощущение" value="Нейтральный"><span>Нейтральный</span></label><label class="option"><input type="radio" name="Смех4_ощущение" value="Неприятный"><span>Неприятный</span></label></div></div>
+      <div class="question"><div class="question-title">Хочется ли тебе улыбнуться или засмеяться вместе?</div><div class="options"><label class="option"><input type="radio" name="Смех4_улыбка" value="Да" required><span>Да</span></label><label class="option"><input type="radio" name="Смех4_улыбка" value="Нет"><span>Нет</span></label></div></div>
+      <div class="question"><div class="question-title">Чей это смех?</div><div class="options"><label class="option"><input type="checkbox" name="Смех4_чей" value="Ребёнка"><span>Ребёнка</span></label><label class="option"><input type="checkbox" name="Смех4_чей" value="Мужчины"><span>Мужчины</span></label><label class="option"><input type="checkbox" name="Смех4_чей" value="Женщины"><span>Женщины</span></label><label class="option"><input type="checkbox" name="Смех4_чей" value="Толпы"><span>Толпы</span></label><label class="option"><input type="checkbox" name="Смех4_чей" value="Выдуманного персонажа"><span>Выдуманного персонажа</span></label></div></div>
+      <div class="question"><div class="question-title">Сколько людей смеётся?</div><div class="options"><label class="option"><input type="radio" name="Смех4_количество" value="1" required><span>1</span></label><label class="option"><input type="radio" name="Смех4_количество" value="2"><span>2</span></label><label class="option"><input type="radio" name="Смех4_количество" value="3"><span>3</span></label><label class="option"><input type="radio" name="Смех4_количество" value="Толпа"><span>Толпа</span></label></div></div>
+      <div class="question"><div class="question-title">Как ты думаешь, ему/ей весело или он/она притворяется?</div><div class="options"><label class="option"><input type="radio" name="Смех4_искренность" value="Весело" required><span>Весело</span></label><label class="option"><input type="radio" name="Смех4_искренность" value="Притворяется"><span>Притворяется</span></label></div></div>
+      <div class="question"><div class="question-title">Он смеётся над кем-то или просто так? Почему он смеётся?</div><div class="options" style="margin-bottom:0.6rem"><label class="option"><input type="radio" name="Смех4_над_кем" value="Над кем-то" required><span>Над кем-то</span></label><label class="option"><input type="radio" name="Смех4_над_кем" value="Просто так"><span>Просто так</span></label></div><textarea class="text-input" name="Смех4_почему" placeholder="Почему он смеётся?"></textarea></div>
+      <div class="question"><div class="question-title">Хотел бы ты быть рядом с этим человеком?</div><div class="options"><label class="option"><input type="radio" name="Смех4_рядом" value="Да" required><span>Да</span></label><label class="option"><input type="radio" name="Смех4_рядом" value="Нет"><span>Нет</span></label></div></div>
     </div>
   </div>
-  <div class="laugh-block">
-    <div class="laugh-header">
-      <div class="laugh-number">5</div>
-      <h2>Смех 5</h2>
-    </div>
+
+  <div class="laugh-block" id="laugh5">
+    <div class="laugh-header"><div class="laugh-number">5</div><h2>Смех 5</h2></div>
     <div class="audio-section">
       <div class="audio-label">🎧 Аудиозапись</div>
-      <audio controls>
-        <source src="laugh5.mp3" type="audio/mpeg">
-        Ваш браузер не поддерживает аудио.
-      </audio>
+      <audio controls><source src="laugh5.mp3" type="audio/mpeg">Ваш браузер не поддерживает аудио.</audio>
       <div class="audio-upload-hint">Файл: <b>laugh5.mp3</b></div>
     </div>
     <div class="questions">
-      <div class="question">
-        <div class="question-title">Какой этот смех?</div>
-        <div class="options">
-          <label class="option"><input type="radio" name="Смех5_тип" value="Добрый" required><span>Добрый</span></label>
-          <label class="option"><input type="radio" name="Смех5_тип" value="Нейтральный"><span>Нейтральный</span></label>
-          <label class="option"><input type="radio" name="Смех5_тип" value="Злой"><span>Злой</span></label>
-        </div>
-      </div>
-      <div class="question">
-        <div class="question-title">Как тебе этот смех?</div>
-        <div class="options">
-          <label class="option"><input type="radio" name="Смех5_ощущение" value="Приятный" required><span>Приятный</span></label>
-          <label class="option"><input type="radio" name="Смех5_ощущение" value="Нейтральный"><span>Нейтральный</span></label>
-          <label class="option"><input type="radio" name="Смех5_ощущение" value="Неприятный"><span>Неприятный</span></label>
-        </div>
-      </div>
-      <div class="question">
-        <div class="question-title">Хочется ли тебе улыбнуться или засмеяться вместе?</div>
-        <div class="options">
-          <label class="option"><input type="radio" name="Смех5_улыбка" value="Да" required><span>Да</span></label>
-          <label class="option"><input type="radio" name="Смех5_улыбка" value="Нет"><span>Нет</span></label>
-        </div>
-      </div>
-      <div class="question">
-        <div class="question-title">Чей это смех?</div>
-        <div class="options">
-          <label class="option"><input type="checkbox" name="Смех5_чей" value="Ребёнка"><span>Ребёнка</span></label>
-          <label class="option"><input type="checkbox" name="Смех5_чей" value="Мужчины"><span>Мужчины</span></label>
-          <label class="option"><input type="checkbox" name="Смех5_чей" value="Женщины"><span>Женщины</span></label>
-          <label class="option"><input type="checkbox" name="Смех5_чей" value="Толпы"><span>Толпы</span></label>
-          <label class="option"><input type="checkbox" name="Смех5_чей" value="Выдуманного персонажа"><span>Выдуманного персонажа</span></label>
-        </div>
-      </div>
-      <div class="question">
-        <div class="question-title">Сколько людей смеётся?</div>
-        <div class="options">
-          <label class="option"><input type="radio" name="Смех5_количество" value="1" required><span>1</span></label>
-          <label class="option"><input type="radio" name="Смех5_количество" value="2"><span>2</span></label>
-          <label class="option"><input type="radio" name="Смех5_количество" value="3"><span>3</span></label>
-          <label class="option"><input type="radio" name="Смех5_количество" value="Толпа"><span>Толпа</span></label>
-        </div>
-      </div>
-      <div class="question">
-        <div class="question-title">Как ты думаешь, ему/ей весело или он/она притворяется?</div>
-        <div class="options">
-          <label class="option"><input type="radio" name="Смех5_искренность" value="Весело" required><span>Весело</span></label>
-          <label class="option"><input type="radio" name="Смех5_искренность" value="Притворяется"><span>Притворяется</span></label>
-        </div>
-      </div>
-      <div class="question">
-        <div class="question-title">Он смеётся над кем-то или просто так? Почему он смеётся?</div>
-        <div class="options" style="margin-bottom:0.6rem">
-          <label class="option"><input type="radio" name="Смех5_над_кем" value="Над кем-то" required><span>Над кем-то</span></label>
-          <label class="option"><input type="radio" name="Смех5_над_кем" value="Просто так"><span>Просто так</span></label>
-        </div>
-        <textarea class="text-input" name="Смех5_почему" placeholder="Почему он смеётся?"></textarea>
-      </div>
-      <div class="question">
-        <div class="question-title">Хотел бы ты быть рядом с этим человеком?</div>
-        <div class="options">
-          <label class="option"><input type="radio" name="Смех5_рядом" value="Да" required><span>Да</span></label>
-          <label class="option"><input type="radio" name="Смех5_рядом" value="Нет"><span>Нет</span></label>
-        </div>
-      </div>
+      <div class="question"><div class="question-title">Какой этот смех?</div><div class="options"><label class="option"><input type="radio" name="Смех5_тип" value="Добрый" required><span>Добрый</span></label><label class="option"><input type="radio" name="Смех5_тип" value="Нейтральный"><span>Нейтральный</span></label><label class="option"><input type="radio" name="Смех5_тип" value="Злой"><span>Злой</span></label></div></div>
+      <div class="question"><div class="question-title">Как тебе этот смех?</div><div class="options"><label class="option"><input type="radio" name="Смех5_ощущение" value="Приятный" required><span>Приятный</span></label><label class="option"><input type="radio" name="Смех5_ощущение" value="Нейтральный"><span>Нейтральный</span></label><label class="option"><input type="radio" name="Смех5_ощущение" value="Неприятный"><span>Неприятный</span></label></div></div>
+      <div class="question"><div class="question-title">Хочется ли тебе улыбнуться или засмеяться вместе?</div><div class="options"><label class="option"><input type="radio" name="Смех5_улыбка" value="Да" required><span>Да</span></label><label class="option"><input type="radio" name="Смех5_улыбка" value="Нет"><span>Нет</span></label></div></div>
+      <div class="question"><div class="question-title">Чей это смех?</div><div class="options"><label class="option"><input type="checkbox" name="Смех5_чей" value="Ребёнка"><span>Ребёнка</span></label><label class="option"><input type="checkbox" name="Смех5_чей" value="Мужчины"><span>Мужчины</span></label><label class="option"><input type="checkbox" name="Смех5_чей" value="Женщины"><span>Женщины</span></label><label class="option"><input type="checkbox" name="Смех5_чей" value="Толпы"><span>Толпы</span></label><label class="option"><input type="checkbox" name="Смех5_чей" value="Выдуманного персонажа"><span>Выдуманного персонажа</span></label></div></div>
+      <div class="question"><div class="question-title">Сколько людей смеётся?</div><div class="options"><label class="option"><input type="radio" name="Смех5_количество" value="1" required><span>1</span></label><label class="option"><input type="radio" name="Смех5_количество" value="2"><span>2</span></label><label class="option"><input type="radio" name="Смех5_количество" value="3"><span>3</span></label><label class="option"><input type="radio" name="Смех5_количество" value="Толпа"><span>Толпа</span></label></div></div>
+      <div class="question"><div class="question-title">Как ты думаешь, ему/ей весело или он/она притворяется?</div><div class="options"><label class="option"><input type="radio" name="Смех5_искренность" value="Весело" required><span>Весело</span></label><label class="option"><input type="radio" name="Смех5_искренность" value="Притворяется"><span>Притворяется</span></label></div></div>
+      <div class="question"><div class="question-title">Он смеётся над кем-то или просто так? Почему он смеётся?</div><div class="options" style="margin-bottom:0.6rem"><label class="option"><input type="radio" name="Смех5_над_кем" value="Над кем-то" required><span>Над кем-то</span></label><label class="option"><input type="radio" name="Смех5_над_кем" value="Просто так"><span>Просто так</span></label></div><textarea class="text-input" name="Смех5_почему" placeholder="Почему он смеётся?"></textarea></div>
+      <div class="question"><div class="question-title">Хотел бы ты быть рядом с этим человеком?</div><div class="options"><label class="option"><input type="radio" name="Смех5_рядом" value="Да" required><span>Да</span></label><label class="option"><input type="radio" name="Смех5_рядом" value="Нет"><span>Нет</span></label></div></div>
     </div>
   </div>
-  <div class="laugh-block">
-    <div class="laugh-header">
-      <div class="laugh-number">6</div>
-      <h2>Смех 6</h2>
-    </div>
+
+  <div class="laugh-block" id="laugh6">
+    <div class="laugh-header"><div class="laugh-number">6</div><h2>Смех 6</h2></div>
     <div class="audio-section">
       <div class="audio-label">🎧 Аудиозапись</div>
-      <audio controls>
-        <source src="laugh6.mp3" type="audio/mpeg">
-        Ваш браузер не поддерживает аудио.
-      </audio>
+      <audio controls><source src="laugh6.mp3" type="audio/mpeg">Ваш браузер не поддерживает аудио.</audio>
       <div class="audio-upload-hint">Файл: <b>laugh6.mp3</b></div>
     </div>
     <div class="questions">
-      <div class="question">
-        <div class="question-title">Какой этот смех?</div>
-        <div class="options">
-          <label class="option"><input type="radio" name="Смех6_тип" value="Добрый" required><span>Добрый</span></label>
-          <label class="option"><input type="radio" name="Смех6_тип" value="Нейтральный"><span>Нейтральный</span></label>
-          <label class="option"><input type="radio" name="Смех6_тип" value="Злой"><span>Злой</span></label>
-        </div>
-      </div>
-      <div class="question">
-        <div class="question-title">Как тебе этот смех?</div>
-        <div class="options">
-          <label class="option"><input type="radio" name="Смех6_ощущение" value="Приятный" required><span>Приятный</span></label>
-          <label class="option"><input type="radio" name="Смех6_ощущение" value="Нейтральный"><span>Нейтральный</span></label>
-          <label class="option"><input type="radio" name="Смех6_ощущение" value="Неприятный"><span>Неприятный</span></label>
-        </div>
-      </div>
-      <div class="question">
-        <div class="question-title">Хочется ли тебе улыбнуться или засмеяться вместе?</div>
-        <div class="options">
-          <label class="option"><input type="radio" name="Смех6_улыбка" value="Да" required><span>Да</span></label>
-          <label class="option"><input type="radio" name="Смех6_улыбка" value="Нет"><span>Нет</span></label>
-        </div>
-      </div>
-      <div class="question">
-        <div class="question-title">Чей это смех?</div>
-        <div class="options">
-          <label class="option"><input type="checkbox" name="Смех6_чей" value="Ребёнка"><span>Ребёнка</span></label>
-          <label class="option"><input type="checkbox" name="Смех6_чей" value="Мужчины"><span>Мужчины</span></label>
-          <label class="option"><input type="checkbox" name="Смех6_чей" value="Женщины"><span>Женщины</span></label>
-          <label class="option"><input type="checkbox" name="Смех6_чей" value="Толпы"><span>Толпы</span></label>
-          <label class="option"><input type="checkbox" name="Смех6_чей" value="Выдуманного персонажа"><span>Выдуманного персонажа</span></label>
-        </div>
-      </div>
-      <div class="question">
-        <div class="question-title">Сколько людей смеётся?</div>
-        <div class="options">
-          <label class="option"><input type="radio" name="Смех6_количество" value="1" required><span>1</span></label>
-          <label class="option"><input type="radio" name="Смех6_количество" value="2"><span>2</span></label>
-          <label class="option"><input type="radio" name="Смех6_количество" value="3"><span>3</span></label>
-          <label class="option"><input type="radio" name="Смех6_количество" value="Толпа"><span>Толпа</span></label>
-        </div>
-      </div>
-      <div class="question">
-        <div class="question-title">Как ты думаешь, ему/ей весело или он/она притворяется?</div>
-        <div class="options">
-          <label class="option"><input type="radio" name="Смех6_искренность" value="Весело" required><span>Весело</span></label>
-          <label class="option"><input type="radio" name="Смех6_искренность" value="Притворяется"><span>Притворяется</span></label>
-        </div>
-      </div>
-      <div class="question">
-        <div class="question-title">Он смеётся над кем-то или просто так? Почему он смеётся?</div>
-        <div class="options" style="margin-bottom:0.6rem">
-          <label class="option"><input type="radio" name="Смех6_над_кем" value="Над кем-то" required><span>Над кем-то</span></label>
-          <label class="option"><input type="radio" name="Смех6_над_кем" value="Просто так"><span>Просто так</span></label>
-        </div>
-        <textarea class="text-input" name="Смех6_почему" placeholder="Почему он смеётся?"></textarea>
-      </div>
-      <div class="question">
-        <div class="question-title">Хотел бы ты быть рядом с этим человеком?</div>
-        <div class="options">
-          <label class="option"><input type="radio" name="Смех6_рядом" value="Да" required><span>Да</span></label>
-          <label class="option"><input type="radio" name="Смех6_рядом" value="Нет"><span>Нет</span></label>
-        </div>
-      </div>
+      <div class="question"><div class="question-title">Какой этот смех?</div><div class="options"><label class="option"><input type="radio" name="Смех6_тип" value="Добрый" required><span>Добрый</span></label><label class="option"><input type="radio" name="Смех6_тип" value="Нейтральный"><span>Нейтральный</span></label><label class="option"><input type="radio" name="Смех6_тип" value="Злой"><span>Злой</span></label></div></div>
+      <div class="question"><div class="question-title">Как тебе этот смех?</div><div class="options"><label class="option"><input type="radio" name="Смех6_ощущение" value="Приятный" required><span>Приятный</span></label><label class="option"><input type="radio" name="Смех6_ощущение" value="Нейтральный"><span>Нейтральный</span></label><label class="option"><input type="radio" name="Смех6_ощущение" value="Неприятный"><span>Неприятный</span></label></div></div>
+      <div class="question"><div class="question-title">Хочется ли тебе улыбнуться или засмеяться вместе?</div><div class="options"><label class="option"><input type="radio" name="Смех6_улыбка" value="Да" required><span>Да</span></label><label class="option"><input type="radio" name="Смех6_улыбка" value="Нет"><span>Нет</span></label></div></div>
+      <div class="question"><div class="question-title">Чей это смех?</div><div class="options"><label class="option"><input type="checkbox" name="Смех6_чей" value="Ребёнка"><span>Ребёнка</span></label><label class="option"><input type="checkbox" name="Смех6_чей" value="Мужчины"><span>Мужчины</span></label><label class="option"><input type="checkbox" name="Смех6_чей" value="Женщины"><span>Женщины</span></label><label class="option"><input type="checkbox" name="Смех6_чей" value="Толпы"><span>Толпы</span></label><label class="option"><input type="checkbox" name="Смех6_чей" value="Выдуманного персонажа"><span>Выдуманного персонажа</span></label></div></div>
+      <div class="question"><div class="question-title">Сколько людей смеётся?</div><div class="options"><label class="option"><input type="radio" name="Смех6_количество" value="1" required><span>1</span></label><label class="option"><input type="radio" name="Смех6_количество" value="2"><span>2</span></label><label class="option"><input type="radio" name="Смех6_количество" value="3"><span>3</span></label><label class="option"><input type="radio" name="Смех6_количество" value="Толпа"><span>Толпа</span></label></div></div>
+      <div class="question"><div class="question-title">Как ты думаешь, ему/ей весело или он/она притворяется?</div><div class="options"><label class="option"><input type="radio" name="Смех6_искренность" value="Весело" required><span>Весело</span></label><label class="option"><input type="radio" name="Смех6_искренность" value="Притворяется"><span>Притворяется</span></label></div></div>
+      <div class="question"><div class="question-title">Он смеётся над кем-то или просто так? Почему он смеётся?</div><div class="options" style="margin-bottom:0.6rem"><label class="option"><input type="radio" name="Смех6_над_кем" value="Над кем-то" required><span>Над кем-то</span></label><label class="option"><input type="radio" name="Смех6_над_кем" value="Просто так"><span>Просто так</span></label></div><textarea class="text-input" name="Смех6_почему" placeholder="Почему он смеётся?"></textarea></div>
+      <div class="question"><div class="question-title">Хотел бы ты быть рядом с этим человеком?</div><div class="options"><label class="option"><input type="radio" name="Смех6_рядом" value="Да" required><span>Да</span></label><label class="option"><input type="radio" name="Смех6_рядом" value="Нет"><span>Нет</span></label></div></div>
     </div>
   </div>
-  <div class="laugh-block">
-    <div class="laugh-header">
-      <div class="laugh-number">7</div>
-      <h2>Смех 7</h2>
-    </div>
+
+  <div class="laugh-block" id="laugh7">
+    <div class="laugh-header"><div class="laugh-number">7</div><h2>Смех 7</h2></div>
     <div class="audio-section">
       <div class="audio-label">🎧 Аудиозапись</div>
-      <audio controls>
-        <source src="laugh7.mp3" type="audio/mpeg">
-        Ваш браузер не поддерживает аудио.
-      </audio>
+      <audio controls><source src="laugh7.mp3" type="audio/mpeg">Ваш браузер не поддерживает аудио.</audio>
       <div class="audio-upload-hint">Файл: <b>laugh7.mp3</b></div>
     </div>
     <div class="questions">
-      <div class="question">
-        <div class="question-title">Какой этот смех?</div>
-        <div class="options">
-          <label class="option"><input type="radio" name="Смех7_тип" value="Добрый" required><span>Добрый</span></label>
-          <label class="option"><input type="radio" name="Смех7_тип" value="Нейтральный"><span>Нейтральный</span></label>
-          <label class="option"><input type="radio" name="Смех7_тип" value="Злой"><span>Злой</span></label>
-        </div>
-      </div>
-      <div class="question">
-        <div class="question-title">Как тебе этот смех?</div>
-        <div class="options">
-          <label class="option"><input type="radio" name="Смех7_ощущение" value="Приятный" required><span>Приятный</span></label>
-          <label class="option"><input type="radio" name="Смех7_ощущение" value="Нейтральный"><span>Нейтральный</span></label>
-          <label class="option"><input type="radio" name="Смех7_ощущение" value="Неприятный"><span>Неприятный</span></label>
-        </div>
-      </div>
-      <div class="question">
-        <div class="question-title">Хочется ли тебе улыбнуться или засмеяться вместе?</div>
-        <div class="options">
-          <label class="option"><input type="radio" name="Смех7_улыбка" value="Да" required><span>Да</span></label>
-          <label class="option"><input type="radio" name="Смех7_улыбка" value="Нет"><span>Нет</span></label>
-        </div>
-      </div>
-      <div class="question">
-        <div class="question-title">Чей это смех?</div>
-        <div class="options">
-          <label class="option"><input type="checkbox" name="Смех7_чей" value="Ребёнка"><span>Ребёнка</span></label>
-          <label class="option"><input type="checkbox" name="Смех7_чей" value="Мужчины"><span>Мужчины</span></label>
-          <label class="option"><input type="checkbox" name="Смех7_чей" value="Женщины"><span>Женщины</span></label>
-          <label class="option"><input type="checkbox" name="Смех7_чей" value="Толпы"><span>Толпы</span></label>
-          <label class="option"><input type="checkbox" name="Смех7_чей" value="Выдуманного персонажа"><span>Выдуманного персонажа</span></label>
-        </div>
-      </div>
-      <div class="question">
-        <div class="question-title">Сколько людей смеётся?</div>
-        <div class="options">
-          <label class="option"><input type="radio" name="Смех7_количество" value="1" required><span>1</span></label>
-          <label class="option"><input type="radio" name="Смех7_количество" value="2"><span>2</span></label>
-          <label class="option"><input type="radio" name="Смех7_количество" value="3"><span>3</span></label>
-          <label class="option"><input type="radio" name="Смех7_количество" value="Толпа"><span>Толпа</span></label>
-        </div>
-      </div>
-      <div class="question">
-        <div class="question-title">Как ты думаешь, ему/ей весело или он/она притворяется?</div>
-        <div class="options">
-          <label class="option"><input type="radio" name="Смех7_искренность" value="Весело" required><span>Весело</span></label>
-          <label class="option"><input type="radio" name="Смех7_искренность" value="Притворяется"><span>Притворяется</span></label>
-        </div>
-      </div>
-      <div class="question">
-        <div class="question-title">Он смеётся над кем-то или просто так? Почему он смеётся?</div>
-        <div class="options" style="margin-bottom:0.6rem">
-          <label class="option"><input type="radio" name="Смех7_над_кем" value="Над кем-то" required><span>Над кем-то</span></label>
-          <label class="option"><input type="radio" name="Смех7_над_кем" value="Просто так"><span>Просто так</span></label>
-        </div>
-        <textarea class="text-input" name="Смех7_почему" placeholder="Почему он смеётся?"></textarea>
-      </div>
-      <div class="question">
-        <div class="question-title">Хотел бы ты быть рядом с этим человеком?</div>
-        <div class="options">
-          <label class="option"><input type="radio" name="Смех7_рядом" value="Да" required><span>Да</span></label>
-          <label class="option"><input type="radio" name="Смех7_рядом" value="Нет"><span>Нет</span></label>
-        </div>
-      </div>
+      <div class="question"><div class="question-title">Какой этот смех?</div><div class="options"><label class="option"><input type="radio" name="Смех7_тип" value="Добрый" required><span>Добрый</span></label><label class="option"><input type="radio" name="Смех7_тип" value="Нейтральный"><span>Нейтральный</span></label><label class="option"><input type="radio" name="Смех7_тип" value="Злой"><span>Злой</span></label></div></div>
+      <div class="question"><div class="question-title">Как тебе этот смех?</div><div class="options"><label class="option"><input type="radio" name="Смех7_ощущение" value="Приятный" required><span>Приятный</span></label><label class="option"><input type="radio" name="Смех7_ощущение" value="Нейтральный"><span>Нейтральный</span></label><label class="option"><input type="radio" name="Смех7_ощущение" value="Неприятный"><span>Неприятный</span></label></div></div>
+      <div class="question"><div class="question-title">Хочется ли тебе улыбнуться или засмеяться вместе?</div><div class="options"><label class="option"><input type="radio" name="Смех7_улыбка" value="Да" required><span>Да</span></label><label class="option"><input type="radio" name="Смех7_улыбка" value="Нет"><span>Нет</span></label></div></div>
+      <div class="question"><div class="question-title">Чей это смех?</div><div class="options"><label class="option"><input type="checkbox" name="Смех7_чей" value="Ребёнка"><span>Ребёнка</span></label><label class="option"><input type="checkbox" name="Смех7_чей" value="Мужчины"><span>Мужчины</span></label><label class="option"><input type="checkbox" name="Смех7_чей" value="Женщины"><span>Женщины</span></label><label class="option"><input type="checkbox" name="Смех7_чей" value="Толпы"><span>Толпы</span></label><label class="option"><input type="checkbox" name="Смех7_чей" value="Выдуманного персонажа"><span>Выдуманного персонажа</span></label></div></div>
+      <div class="question"><div class="question-title">Сколько людей смеётся?</div><div class="options"><label class="option"><input type="radio" name="Смех7_количество" value="1" required><span>1</span></label><label class="option"><input type="radio" name="Смех7_количество" value="2"><span>2</span></label><label class="option"><input type="radio" name="Смех7_количество" value="3"><span>3</span></label><label class="option"><input type="radio" name="Смех7_количество" value="Толпа"><span>Толпа</span></label></div></div>
+      <div class="question"><div class="question-title">Как ты думаешь, ему/ей весело или он/она притворяется?</div><div class="options"><label class="option"><input type="radio" name="Смех7_искренность" value="Весело" required><span>Весело</span></label><label class="option"><input type="radio" name="Смех7_искренность" value="Притворяется"><span>Притворяется</span></label></div></div>
+      <div class="question"><div class="question-title">Он смеётся над кем-то или просто так? Почему он смеётся?</div><div class="options" style="margin-bottom:0.6rem"><label class="option"><input type="radio" name="Смех7_над_кем" value="Над кем-то" required><span>Над кем-то</span></label><label class="option"><input type="radio" name="Смех7_над_кем" value="Просто так"><span>Просто так</span></label></div><textarea class="text-input" name="Смех7_почему" placeholder="Почему он смеётся?"></textarea></div>
+      <div class="question"><div class="question-title">Хотел бы ты быть рядом с этим человеком?</div><div class="options"><label class="option"><input type="radio" name="Смех7_рядом" value="Да" required><span>Да</span></label><label class="option"><input type="radio" name="Смех7_рядом" value="Нет"><span>Нет</span></label></div></div>
     </div>
   </div>
-  <div class="laugh-block">
-    <div class="laugh-header">
-      <div class="laugh-number">8</div>
-      <h2>Смех 8</h2>
-    </div>
+
+  <div class="laugh-block" id="laugh8">
+    <div class="laugh-header"><div class="laugh-number">8</div><h2>Смех 8</h2></div>
     <div class="audio-section">
       <div class="audio-label">🎧 Аудиозапись</div>
-      <audio controls>
-        <source src="laugh8.mp3" type="audio/mpeg">
-        Ваш браузер не поддерживает аудио.
-      </audio>
+      <audio controls><source src="laugh8.mp3" type="audio/mpeg">Ваш браузер не поддерживает аудио.</audio>
       <div class="audio-upload-hint">Файл: <b>laugh8.mp3</b></div>
     </div>
     <div class="questions">
-      <div class="question">
-        <div class="question-title">Какой этот смех?</div>
-        <div class="options">
-          <label class="option"><input type="radio" name="Смех8_тип" value="Добрый" required><span>Добрый</span></label>
-          <label class="option"><input type="radio" name="Смех8_тип" value="Нейтральный"><span>Нейтральный</span></label>
-          <label class="option"><input type="radio" name="Смех8_тип" value="Злой"><span>Злой</span></label>
-        </div>
-      </div>
-      <div class="question">
-        <div class="question-title">Как тебе этот смех?</div>
-        <div class="options">
-          <label class="option"><input type="radio" name="Смех8_ощущение" value="Приятный" required><span>Приятный</span></label>
-          <label class="option"><input type="radio" name="Смех8_ощущение" value="Нейтральный"><span>Нейтральный</span></label>
-          <label class="option"><input type="radio" name="Смех8_ощущение" value="Неприятный"><span>Неприятный</span></label>
-        </div>
-      </div>
-      <div class="question">
-        <div class="question-title">Хочется ли тебе улыбнуться или засмеяться вместе?</div>
-        <div class="options">
-          <label class="option"><input type="radio" name="Смех8_улыбка" value="Да" required><span>Да</span></label>
-          <label class="option"><input type="radio" name="Смех8_улыбка" value="Нет"><span>Нет</span></label>
-        </div>
-      </div>
-      <div class="question">
-        <div class="question-title">Чей это смех?</div>
-        <div class="options">
-          <label class="option"><input type="checkbox" name="Смех8_чей" value="Ребёнка"><span>Ребёнка</span></label>
-          <label class="option"><input type="checkbox" name="Смех8_чей" value="Мужчины"><span>Мужчины</span></label>
-          <label class="option"><input type="checkbox" name="Смех8_чей" value="Женщины"><span>Женщины</span></label>
-          <label class="option"><input type="checkbox" name="Смех8_чей" value="Толпы"><span>Толпы</span></label>
-          <label class="option"><input type="checkbox" name="Смех8_чей" value="Выдуманного персонажа"><span>Выдуманного персонажа</span></label>
-        </div>
-      </div>
-      <div class="question">
-        <div class="question-title">Сколько людей смеётся?</div>
-        <div class="options">
-          <label class="option"><input type="radio" name="Смех8_количество" value="1" required><span>1</span></label>
-          <label class="option"><input type="radio" name="Смех8_количество" value="2"><span>2</span></label>
-          <label class="option"><input type="radio" name="Смех8_количество" value="3"><span>3</span></label>
-          <label class="option"><input type="radio" name="Смех8_количество" value="Толпа"><span>Толпа</span></label>
-        </div>
-      </div>
-      <div class="question">
-        <div class="question-title">Как ты думаешь, ему/ей весело или он/она притворяется?</div>
-        <div class="options">
-          <label class="option"><input type="radio" name="Смех8_искренность" value="Весело" required><span>Весело</span></label>
-          <label class="option"><input type="radio" name="Смех8_искренность" value="Притворяется"><span>Притворяется</span></label>
-        </div>
-      </div>
-      <div class="question">
-        <div class="question-title">Он смеётся над кем-то или просто так? Почему он смеётся?</div>
-        <div class="options" style="margin-bottom:0.6rem">
-          <label class="option"><input type="radio" name="Смех8_над_кем" value="Над кем-то" required><span>Над кем-то</span></label>
-          <label class="option"><input type="radio" name="Смех8_над_кем" value="Просто так"><span>Просто так</span></label>
-        </div>
-        <textarea class="text-input" name="Смех8_почему" placeholder="Почему он смеётся?"></textarea>
-      </div>
-      <div class="question">
-        <div class="question-title">Хотел бы ты быть рядом с этим человеком?</div>
-        <div class="options">
-          <label class="option"><input type="radio" name="Смех8_рядом" value="Да" required><span>Да</span></label>
-          <label class="option"><input type="radio" name="Смех8_рядом" value="Нет"><span>Нет</span></label>
-        </div>
-      </div>
+      <div class="question"><div class="question-title">Какой этот смех?</div><div class="options"><label class="option"><input type="radio" name="Смех8_тип" value="Добрый" required><span>Добрый</span></label><label class="option"><input type="radio" name="Смех8_тип" value="Нейтральный"><span>Нейтральный</span></label><label class="option"><input type="radio" name="Смех8_тип" value="Злой"><span>Злой</span></label></div></div>
+      <div class="question"><div class="question-title">Как тебе этот смех?</div><div class="options"><label class="option"><input type="radio" name="Смех8_ощущение" value="Приятный" required><span>Приятный</span></label><label class="option"><input type="radio" name="Смех8_ощущение" value="Нейтральный"><span>Нейтральный</span></label><label class="option"><input type="radio" name="Смех8_ощущение" value="Неприятный"><span>Неприятный</span></label></div></div>
+      <div class="question"><div class="question-title">Хочется ли тебе улыбнуться или засмеяться вместе?</div><div class="options"><label class="option"><input type="radio" name="Смех8_улыбка" value="Да" required><span>Да</span></label><label class="option"><input type="radio" name="Смех8_улыбка" value="Нет"><span>Нет</span></label></div></div>
+      <div class="question"><div class="question-title">Чей это смех?</div><div class="options"><label class="option"><input type="checkbox" name="Смех8_чей" value="Ребёнка"><span>Ребёнка</span></label><label class="option"><input type="checkbox" name="Смех8_чей" value="Мужчины"><span>Мужчины</span></label><label class="option"><input type="checkbox" name="Смех8_чей" value="Женщины"><span>Женщины</span></label><label class="option"><input type="checkbox" name="Смех8_чей" value="Толпы"><span>Толпы</span></label><label class="option"><input type="checkbox" name="Смех8_чей" value="Выдуманного персонажа"><span>Выдуманного персонажа</span></label></div></div>
+      <div class="question"><div class="question-title">Сколько людей смеётся?</div><div class="options"><label class="option"><input type="radio" name="Смех8_количество" value="1" required><span>1</span></label><label class="option"><input type="radio" name="Смех8_количество" value="2"><span>2</span></label><label class="option"><input type="radio" name="Смех8_количество" value="3"><span>3</span></label><label class="option"><input type="radio" name="Смех8_количество" value="Толпа"><span>Толпа</span></label></div></div>
+      <div class="question"><div class="question-title">Как ты думаешь, ему/ей весело или он/она притворяется?</div><div class="options"><label class="option"><input type="radio" name="Смех8_искренность" value="Весело" required><span>Весело</span></label><label class="option"><input type="radio" name="Смех8_искренность" value="Притворяется"><span>Притворяется</span></label></div></div>
+      <div class="question"><div class="question-title">Он смеётся над кем-то или просто так? Почему он смеётся?</div><div class="options" style="margin-bottom:0.6rem"><label class="option"><input type="radio" name="Смех8_над_кем" value="Над кем-то" required><span>Над кем-то</span></label><label class="option"><input type="radio" name="Смех8_над_кем" value="Просто так"><span>Просто так</span></label></div><textarea class="text-input" name="Смех8_почему" placeholder="Почему он смеётся?"></textarea></div>
+      <div class="question"><div class="question-title">Хотел бы ты быть рядом с этим человеком?</div><div class="options"><label class="option"><input type="radio" name="Смех8_рядом" value="Да" required><span>Да</span></label><label class="option"><input type="radio" name="Смех8_рядом" value="Нет"><span>Нет</span></label></div></div>
     </div>
   </div>
-  <div class="laugh-block">
-    <div class="laugh-header">
-      <div class="laugh-number">9</div>
-      <h2>Смех 9</h2>
-    </div>
+
+  <div class="laugh-block" id="laugh9">
+    <div class="laugh-header"><div class="laugh-number">9</div><h2>Смех 9</h2></div>
     <div class="audio-section">
       <div class="audio-label">🎧 Аудиозапись</div>
-      <audio controls>
-        <source src="laugh9.mp3" type="audio/mpeg">
-        Ваш браузер не поддерживает аудио.
-      </audio>
+      <audio controls><source src="laugh9.mp3" type="audio/mpeg">Ваш браузер не поддерживает аудио.</audio>
       <div class="audio-upload-hint">Файл: <b>laugh9.mp3</b></div>
     </div>
     <div class="questions">
-      <div class="question">
-        <div class="question-title">Какой этот смех?</div>
-        <div class="options">
-          <label class="option"><input type="radio" name="Смех9_тип" value="Добрый" required><span>Добрый</span></label>
-          <label class="option"><input type="radio" name="Смех9_тип" value="Нейтральный"><span>Нейтральный</span></label>
-          <label class="option"><input type="radio" name="Смех9_тип" value="Злой"><span>Злой</span></label>
-        </div>
-      </div>
-      <div class="question">
-        <div class="question-title">Как тебе этот смех?</div>
-        <div class="options">
-          <label class="option"><input type="radio" name="Смех9_ощущение" value="Приятный" required><span>Приятный</span></label>
-          <label class="option"><input type="radio" name="Смех9_ощущение" value="Нейтральный"><span>Нейтральный</span></label>
-          <label class="option"><input type="radio" name="Смех9_ощущение" value="Неприятный"><span>Неприятный</span></label>
-        </div>
-      </div>
-      <div class="question">
-        <div class="question-title">Хочется ли тебе улыбнуться или засмеяться вместе?</div>
-        <div class="options">
-          <label class="option"><input type="radio" name="Смех9_улыбка" value="Да" required><span>Да</span></label>
-          <label class="option"><input type="radio" name="Смех9_улыбка" value="Нет"><span>Нет</span></label>
-        </div>
-      </div>
-      <div class="question">
-        <div class="question-title">Чей это смех?</div>
-        <div class="options">
-          <label class="option"><input type="checkbox" name="Смех9_чей" value="Ребёнка"><span>Ребёнка</span></label>
-          <label class="option"><input type="checkbox" name="Смех9_чей" value="Мужчины"><span>Мужчины</span></label>
-          <label class="option"><input type="checkbox" name="Смех9_чей" value="Женщины"><span>Женщины</span></label>
-          <label class="option"><input type="checkbox" name="Смех9_чей" value="Толпы"><span>Толпы</span></label>
-          <label class="option"><input type="checkbox" name="Смех9_чей" value="Выдуманного персонажа"><span>Выдуманного персонажа</span></label>
-        </div>
-      </div>
-      <div class="question">
-        <div class="question-title">Сколько людей смеётся?</div>
-        <div class="options">
-          <label class="option"><input type="radio" name="Смех9_количество" value="1" required><span>1</span></label>
-          <label class="option"><input type="radio" name="Смех9_количество" value="2"><span>2</span></label>
-          <label class="option"><input type="radio" name="Смех9_количество" value="3"><span>3</span></label>
-          <label class="option"><input type="radio" name="Смех9_количество" value="Толпа"><span>Толпа</span></label>
-        </div>
-      </div>
-      <div class="question">
-        <div class="question-title">Как ты думаешь, ему/ей весело или он/она притворяется?</div>
-        <div class="options">
-          <label class="option"><input type="radio" name="Смех9_искренность" value="Весело" required><span>Весело</span></label>
-          <label class="option"><input type="radio" name="Смех9_искренность" value="Притворяется"><span>Притворяется</span></label>
-        </div>
-      </div>
-      <div class="question">
-        <div class="question-title">Он смеётся над кем-то или просто так? Почему он смеётся?</div>
-        <div class="options" style="margin-bottom:0.6rem">
-          <label class="option"><input type="radio" name="Смех9_над_кем" value="Над кем-то" required><span>Над кем-то</span></label>
-          <label class="option"><input type="radio" name="Смех9_над_кем" value="Просто так"><span>Просто так</span></label>
-        </div>
-        <textarea class="text-input" name="Смех9_почему" placeholder="Почему он смеётся?"></textarea>
-      </div>
-      <div class="question">
-        <div class="question-title">Хотел бы ты быть рядом с этим человеком?</div>
-        <div class="options">
-          <label class="option"><input type="radio" name="Смех9_рядом" value="Да" required><span>Да</span></label>
-          <label class="option"><input type="radio" name="Смех9_рядом" value="Нет"><span>Нет</span></label>
-        </div>
-      </div>
+      <div class="question"><div class="question-title">Какой этот смех?</div><div class="options"><label class="option"><input type="radio" name="Смех9_тип" value="Добрый" required><span>Добрый</span></label><label class="option"><input type="radio" name="Смех9_тип" value="Нейтральный"><span>Нейтральный</span></label><label class="option"><input type="radio" name="Смех9_тип" value="Злой"><span>Злой</span></label></div></div>
+      <div class="question"><div class="question-title">Как тебе этот смех?</div><div class="options"><label class="option"><input type="radio" name="Смех9_ощущение" value="Приятный" required><span>Приятный</span></label><label class="option"><input type="radio" name="Смех9_ощущение" value="Нейтральный"><span>Нейтральный</span></label><label class="option"><input type="radio" name="Смех9_ощущение" value="Неприятный"><span>Неприятный</span></label></div></div>
+      <div class="question"><div class="question-title">Хочется ли тебе улыбнуться или засмеяться вместе?</div><div class="options"><label class="option"><input type="radio" name="Смех9_улыбка" value="Да" required><span>Да</span></label><label class="option"><input type="radio" name="Смех9_улыбка" value="Нет"><span>Нет</span></label></div></div>
+      <div class="question"><div class="question-title">Чей это смех?</div><div class="options"><label class="option"><input type="checkbox" name="Смех9_чей" value="Ребёнка"><span>Ребёнка</span></label><label class="option"><input type="checkbox" name="Смех9_чей" value="Мужчины"><span>Мужчины</span></label><label class="option"><input type="checkbox" name="Смех9_чей" value="Женщины"><span>Женщины</span></label><label class="option"><input type="checkbox" name="Смех9_чей" value="Толпы"><span>Толпы</span></label><label class="option"><input type="checkbox" name="Смех9_чей" value="Выдуманного персонажа"><span>Выдуманного персонажа</span></label></div></div>
+      <div class="question"><div class="question-title">Сколько людей смеётся?</div><div class="options"><label class="option"><input type="radio" name="Смех9_количество" value="1" required><span>1</span></label><label class="option"><input type="radio" name="Смех9_количество" value="2"><span>2</span></label><label class="option"><input type="radio" name="Смех9_количество" value="3"><span>3</span></label><label class="option"><input type="radio" name="Смех9_количество" value="Толпа"><span>Толпа</span></label></div></div>
+      <div class="question"><div class="question-title">Как ты думаешь, ему/ей весело или он/она притворяется?</div><div class="options"><label class="option"><input type="radio" name="Смех9_искренность" value="Весело" required><span>Весело</span></label><label class="option"><input type="radio" name="Смех9_искренность" value="Притворяется"><span>Притворяется</span></label></div></div>
+      <div class="question"><div class="question-title">Он смеётся над кем-то или просто так? Почему он смеётся?</div><div class="options" style="margin-bottom:0.6rem"><label class="option"><input type="radio" name="Смех9_над_кем" value="Над кем-то" required><span>Над кем-то</span></label><label class="option"><input type="radio" name="Смех9_над_кем" value="Просто так"><span>Просто так</span></label></div><textarea class="text-input" name="Смех9_почему" placeholder="Почему он смеётся?"></textarea></div>
+      <div class="question"><div class="question-title">Хотел бы ты быть рядом с этим человеком?</div><div class="options"><label class="option"><input type="radio" name="Смех9_рядом" value="Да" required><span>Да</span></label><label class="option"><input type="radio" name="Смех9_рядом" value="Нет"><span>Нет</span></label></div></div>
     </div>
   </div>
-  <div class="laugh-block">
-    <div class="laugh-header">
-      <div class="laugh-number">10</div>
-      <h2>Смех 10</h2>
-    </div>
+
+  <div class="laugh-block" id="laugh10">
+    <div class="laugh-header"><div class="laugh-number">10</div><h2>Смех 10</h2></div>
     <div class="audio-section">
       <div class="audio-label">🎧 Аудиозапись</div>
-      <audio controls>
-        <source src="laugh10.mp3" type="audio/mpeg">
-        Ваш браузер не поддерживает аудио.
-      </audio>
+      <audio controls><source src="laugh10.mp3" type="audio/mpeg">Ваш браузер не поддерживает аудио.</audio>
       <div class="audio-upload-hint">Файл: <b>laugh10.mp3</b></div>
     </div>
     <div class="questions">
-      <div class="question">
-        <div class="question-title">Какой этот смех?</div>
-        <div class="options">
-          <label class="option"><input type="radio" name="Смех10_тип" value="Добрый" required><span>Добрый</span></label>
-          <label class="option"><input type="radio" name="Смех10_тип" value="Нейтральный"><span>Нейтральный</span></label>
-          <label class="option"><input type="radio" name="Смех10_тип" value="Злой"><span>Злой</span></label>
-        </div>
-      </div>
-      <div class="question">
-        <div class="question-title">Как тебе этот смех?</div>
-        <div class="options">
-          <label class="option"><input type="radio" name="Смех10_ощущение" value="Приятный" required><span>Приятный</span></label>
-          <label class="option"><input type="radio" name="Смех10_ощущение" value="Нейтральный"><span>Нейтральный</span></label>
-          <label class="option"><input type="radio" name="Смех10_ощущение" value="Неприятный"><span>Неприятный</span></label>
-        </div>
-      </div>
-      <div class="question">
-        <div class="question-title">Хочется ли тебе улыбнуться или засмеяться вместе?</div>
-        <div class="options">
-          <label class="option"><input type="radio" name="Смех10_улыбка" value="Да" required><span>Да</span></label>
-          <label class="option"><input type="radio" name="Смех10_улыбка" value="Нет"><span>Нет</span></label>
-        </div>
-      </div>
-      <div class="question">
-        <div class="question-title">Чей это смех?</div>
-        <div class="options">
-          <label class="option"><input type="checkbox" name="Смех10_чей" value="Ребёнка"><span>Ребёнка</span></label>
-          <label class="option"><input type="checkbox" name="Смех10_чей" value="Мужчины"><span>Мужчины</span></label>
-          <label class="option"><input type="checkbox" name="Смех10_чей" value="Женщины"><span>Женщины</span></label>
-          <label class="option"><input type="checkbox" name="Смех10_чей" value="Толпы"><span>Толпы</span></label>
-          <label class="option"><input type="checkbox" name="Смех10_чей" value="Выдуманного персонажа"><span>Выдуманного персонажа</span></label>
-        </div>
-      </div>
-      <div class="question">
-        <div class="question-title">Сколько людей смеётся?</div>
-        <div class="options">
-          <label class="option"><input type="radio" name="Смех10_количество" value="1" required><span>1</span></label>
-          <label class="option"><input type="radio" name="Смех10_количество" value="2"><span>2</span></label>
-          <label class="option"><input type="radio" name="Смех10_количество" value="3"><span>3</span></label>
-          <label class="option"><input type="radio" name="Смех10_количество" value="Толпа"><span>Толпа</span></label>
-        </div>
-      </div>
-      <div class="question">
-        <div class="question-title">Как ты думаешь, ему/ей весело или он/она притворяется?</div>
-        <div class="options">
-          <label class="option"><input type="radio" name="Смех10_искренность" value="Весело" required><span>Весело</span></label>
-          <label class="option"><input type="radio" name="Смех10_искренность" value="Притворяется"><span>Притворяется</span></label>
-        </div>
-      </div>
-      <div class="question">
-        <div class="question-title">Он смеётся над кем-то или просто так? Почему он смеётся?</div>
-        <div class="options" style="margin-bottom:0.6rem">
-          <label class="option"><input type="radio" name="Смех10_над_кем" value="Над кем-то" required><span>Над кем-то</span></label>
-          <label class="option"><input type="radio" name="Смех10_над_кем" value="Просто так"><span>Просто так</span></label>
-        </div>
-        <textarea class="text-input" name="Смех10_почему" placeholder="Почему он смеётся?"></textarea>
-      </div>
-      <div class="question">
-        <div class="question-title">Хотел бы ты быть рядом с этим человеком?</div>
-        <div class="options">
-          <label class="option"><input type="radio" name="Смех10_рядом" value="Да" required><span>Да</span></label>
-          <label class="option"><input type="radio" name="Смех10_рядом" value="Нет"><span>Нет</span></label>
-        </div>
-      </div>
+      <div class="question"><div class="question-title">Какой этот смех?</div><div class="options"><label class="option"><input type="radio" name="Смех10_тип" value="Добрый" required><span>Добрый</span></label><label class="option"><input type="radio" name="Смех10_тип" value="Нейтральный"><span>Нейтральный</span></label><label class="option"><input type="radio" name="Смех10_тип" value="Злой"><span>Злой</span></label></div></div>
+      <div class="question"><div class="question-title">Как тебе этот смех?</div><div class="options"><label class="option"><input type="radio" name="Смех10_ощущение" value="Приятный" required><span>Приятный</span></label><label class="option"><input type="radio" name="Смех10_ощущение" value="Нейтральный"><span>Нейтральный</span></label><label class="option"><input type="radio" name="Смех10_ощущение" value="Неприятный"><span>Неприятный</span></label></div></div>
+      <div class="question"><div class="question-title">Хочется ли тебе улыбнуться или засмеяться вместе?</div><div class="options"><label class="option"><input type="radio" name="Смех10_улыбка" value="Да" required><span>Да</span></label><label class="option"><input type="radio" name="Смех10_улыбка" value="Нет"><span>Нет</span></label></div></div>
+      <div class="question"><div class="question-title">Чей это смех?</div><div class="options"><label class="option"><input type="checkbox" name="Смех10_чей" value="Ребёнка"><span>Ребёнка</span></label><label class="option"><input type="checkbox" name="Смех10_чей" value="Мужчины"><span>Мужчины</span></label><label class="option"><input type="checkbox" name="Смех10_чей" value="Женщины"><span>Женщины</span></label><label class="option"><input type="checkbox" name="Смех10_чей" value="Толпы"><span>Толпы</span></label><label class="option"><input type="checkbox" name="Смех10_чей" value="Выдуманного персонажа"><span>Выдуманного персонажа</span></label></div></div>
+      <div class="question"><div class="question-title">Сколько людей смеётся?</div><div class="options"><label class="option"><input type="radio" name="Смех10_количество" value="1" required><span>1</span></label><label class="option"><input type="radio" name="Смех10_количество" value="2"><span>2</span></label><label class="option"><input type="radio" name="Смех10_количество" value="3"><span>3</span></label><label class="option"><input type="radio" name="Смех10_количество" value="Толпа"><span>Толпа</span></label></div></div>
+      <div class="question"><div class="question-title">Как ты думаешь, ему/ей весело или он/она притворяется?</div><div class="options"><label class="option"><input type="radio" name="Смех10_искренность" value="Весело" required><span>Весело</span></label><label class="option"><input type="radio" name="Смех10_искренность" value="Притворяется"><span>Притворяется</span></label></div></div>
+      <div class="question"><div class="question-title">Он смеётся над кем-то или просто так? Почему он смеётся?</div><div class="options" style="margin-bottom:0.6rem"><label class="option"><input type="radio" name="Смех10_над_кем" value="Над кем-то" required><span>Над кем-то</span></label><label class="option"><input type="radio" name="Смех10_над_кем" value="Просто так"><span>Просто так</span></label></div><textarea class="text-input" name="Смех10_почему" placeholder="Почему он смеётся?"></textarea></div>
+      <div class="question"><div class="question-title">Хотел бы ты быть рядом с этим человеком?</div><div class="options"><label class="option"><input type="radio" name="Смех10_рядом" value="Да" required><span>Да</span></label><label class="option"><input type="radio" name="Смех10_рядом" value="Нет"><span>Нет</span></label></div></div>
     </div>
   </div>
 
@@ -921,13 +293,9 @@ audio{width:100%;border-radius:var(--radius-md)}
 </div>
 
 <script>
-// ▼▼▼ ВСТАВЬТЕ URL ВАШЕГО GOOGLE APPS SCRIPT ▼▼▼
-const SCRIPT_URL = 'ВСТАВЬТЕ_URL_СКРИПТА';
-// ▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲
+const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzg6TleGcjQ5H5J9G7L4PXw8HnKHBqwOE1KM5kikS2cYl9DrvhuXofZvvEM1WGLj_zw/exec';
 
 let savedData = {};
-
-document.querySelectorAll('.laugh-block').forEach((el, i) => { el.id = 'laugh' + (i+1); });
 
 function updateProgress() {
   let filled = 0;
