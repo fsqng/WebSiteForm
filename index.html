@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Оценка смеховой экспрессии</title>
+<script type="text/javascript" nonce="e3215159095e42c9ae30a3a5106" src="//local.adguard.org?ts=1777670352620&amp;type=content-script&amp;dmn=ppl-ai-code-interpreter-files.s3.amazonaws.com&amp;url=https%3A%2F%2Fppl-ai-code-interpreter-files.s3.amazonaws.com%2Fweb%2Fdirect-files%2Fa2385de7600d4e729972e01502d37db9%2F782be16f-a06d-4533-842e-afb7e0b9369b%2Ff2f243fb.html%3Fresponse-content-disposition%3Dattachment%253B%2520filename%253D%2522survey-laugh.html%2522%253B%2520filename%252A%253DUTF-8%2527%2527survey-laugh.html%26AWSAccessKeyId%3DASIA2F3EMEYERERHNFQW%26Signature%3DZaFr3qKO7wZmTGDfv9afLOovFOc%253D%26x-amz-security-token%3DIQoJb3JpZ2luX2VjEGYaCXVzLWVhc3QtMSJGMEQCIEnbYMuU1WKXitzgOpeefLtxUB167hNNlNAPjxT63bHHAiBC1toNBz2z1364NageSuny7MMXC252Enp8m%252BTIaZRHSSrzBAgvEAEaDDY5OTc1MzMwOTcwNSIMJzlVK2jM52crOMWmKtAEZb07V77tjRFJ6RXa75JQqMLvE6ziM0fLqckaqyqOPKOs0D4xxRVUf7flXsjMrWdNO99YGx64pZdaGbsEB66I%252FziHj4ccH6THXfZsSW6TUndWllmmZusJug1MnhukHBWomxLLyxaBpm1%252BXXuX2A9vTn5PlQGJNK58E6w2vih%252FtZ2jXop5TGI1SmWoXZWmMSbUp7YQ2qKq23DLsPq5%252F4tnWLFdTATwjC%252BMt4nUITz5ctwarRmXgr1Xch1R7BYcXitbgpsvp7Vmg5evDHii6TbBBElG7gef15DlvYS1KWeh6S6XHqQlQtwI2Kqv6pVBZf03MShjOKZnbH8RBuCnkqcvHCwbQVuDv%252FwwYf4rw%252B3fHgPX77r5elIS2BDrfraKm6JOxQzyUAPt3N9fnSYz9BUFwlzpkzBnmXXQizElxhe8QnH0%252FyoO2m%252BJ6EykqpeEDhQJikKSrYDd0fz0ZTA2o1bWbXMNHJiXWTzPMSoYEG39ftDKtINXWhjkeL%252FQYgHU9Px%252FppcY14dXSwcfJ7NbCab%252FXIdG35p80hNxKv%252FZwxr541PfgqbrmDB9EfWw6bD5B7pxoIkSYzDfw5J%252FalXAwUHxYqA%252Fepb%252FYQI1AQZAFFFFi98WdUpEHOpr1OopZvB6AguYKhpn2Az0tEOkKw5QJ%252BxzKd1T2GU8s%252BKk%252Fjzkcn4QB%252FHTpu6kf%252BhiT3wnHPqdR6YJ7a5PZTFLfo%252FAmr8YYx6Y4txZAcYDQIJmrs3luE7bSTIMQ%252FaPKIrHygdEGslohwDUlZqCnPWfQv49Q%252FNHxmLyCzDmutTPBjqZAUdGPSJqH1gCsk8w85Mg1gGbB9Q5L4umVhMwCH2HdEIyIRytasESNwEeDKpxcfHMsdnNXtu1x7qX1TX35NvBoKx6WAKvfkh54N18K0hzZoPHRydKkI7a%252Ba6IGuP%252FQtDYaiCIyEusO1RZDE8CED4zePVvmJxWcH1tTCDrd9Y2seN3l61Zr7pTuRfGE%252B5glynAUj%252F%252BToLvXvqRAQ%253D%253D%26Expires%3D1777672623&amp;app=com.google.Chrome&amp;css=3&amp;js=1&amp;rel=1&amp;rji=1&amp;sbe=1"></script><script type="text/javascript" nonce="e3215159095e42c9ae30a3a5106" src="//local.adguard.org?ts=1777670352620&amp;name=AdGuard%20Extra&amp;type=user-script"></script><link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--color-bg:#f7f6f2;--color-surface:#fff;--color-border:#e0ddd8;--color-text:#28251d;--color-text-muted:#7a7974;--color-primary:#01696f;--color-primary-hover:#0c4e54;--color-accent:#ea7c1e;--radius-md:.5rem;--radius-lg:.75rem;--shadow-md:0 4px 16px rgba(0,0,0,.08)}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Inter',sans-serif;background:var(--color-bg);color:var(--color-text);min-height:100vh;padding:2rem 1rem}
+.container{max-width:720px;margin:0 auto}
+header{text-align:center;margin-bottom:2rem}
+header h1{font-size:1.6rem;font-weight:700;margin-bottom:.4rem}
+header p{color:var(--color-text-muted);font-size:.93rem}
+.respondent-block{background:var(--color-surface);border-radius:var(--radius-lg);box-shadow:var(--shadow-md);padding:1.25rem 1.5rem;margin-bottom:1.5rem}
+.respondent-block h3{font-size:.95rem;font-weight:700;margin-bottom:1rem;color:var(--color-primary)}
+.fields{display:grid;grid-template-columns:1fr 1fr;gap:.75rem}
+.field label{display:block;font-size:.8rem;font-weight:600;color:var(--color-text-muted);margin-bottom:.3rem}
+.field input,.field select{width:100%;border:1px solid var(--color-border);border-radius:var(--radius-md);padding:.55rem .75rem;font-size:.9rem;font-family:inherit;background:var(--color-bg);color:var(--color-text)}
+.field input:focus,.field select:focus{outline:none;border-color:var(--color-primary)}
+@media(max-width:480px){.fields{grid-template-columns:1fr}}
+.nav-chips{display:flex;flex-wrap:wrap;gap:.4rem;justify-content:center;margin-bottom:1.5rem}
+.nav-chip{background:var(--color-surface);border:1px solid var(--color-border);border-radius:999px;padding:.3rem .85rem;font-size:.82rem;font-weight:600;cursor:pointer;color:var(--color-text-muted);text-decoration:none;transition:all .15s}
+.nav-chip:hover{background:var(--color-accent);color:white;border-color:var(--color-accent)}
+.progress-wrap{position:sticky;top:0;z-index:10;background:var(--color-bg);padding:.6rem 0;margin-bottom:1rem}
+.progress-bar-bg{background:var(--color-border);border-radius:999px;height:6px}
+.progress-bar-fill{background:var(--color-primary);border-radius:999px;height:6px;width:0%;transition:width .4s ease}
+.progress-label{font-size:.78rem;color:var(--color-text-muted);text-align:right;margin-top:.25rem}
+.laugh-block{background:var(--color-surface);border-radius:var(--radius-lg);box-shadow:var(--shadow-md);margin-bottom:2rem;overflow:hidden}
+.laugh-header{background:var(--color-accent);color:white;padding:1rem 1.5rem;display:flex;align-items:center;gap:.75rem}
+.laugh-header h2{font-size:1.1rem;font-weight:700}
+.laugh-number{background:rgba(255,255,255,.25);border-radius:50%;width:32px;height:32px;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.9rem;flex-shrink:0}
+.audio-section{padding:1.25rem 1.5rem;background:#fef9f9;border-bottom:1px solid var(--color-border)}
+.audio-label{font-size:.8rem;font-weight:600;color:var(--color-accent);text-transform:uppercase;letter-spacing:.05em;margin-bottom:.5rem}
+.audio-upload-hint{font-size:.82rem;color:var(--color-text-muted);margin-top:.4rem}
+audio{width:100%;border-radius:var(--radius-md)}
+.questions{padding:1.5rem;display:flex;flex-direction:column;gap:1.5rem}
+.question-title{font-weight:600;font-size:.95rem;margin-bottom:.75rem}
+.options{display:flex;flex-wrap:wrap;gap:.5rem 1.2rem}
+.option{display:flex;align-items:center;gap:.4rem;cursor:pointer}
+.option input{accent-color:var(--color-primary);width:17px;height:17px;cursor:pointer}
+.option span{font-size:.92rem}
+.text-input{width:100%;border:1px solid var(--color-border);border-radius:var(--radius-md);padding:.6rem .75rem;font-size:.9rem;font-family:inherit;resize:vertical;min-height:60px;background:var(--color-bg);color:var(--color-text);transition:border-color .15s}
+.text-input:focus{outline:none;border-color:var(--color-primary)}
+.submit-btn{display:block;width:100%;max-width:320px;margin:2rem auto 0;background:var(--color-primary);color:white;border:none;border-radius:var(--radius-md);padding:.9rem 1.5rem;font-size:1rem;font-weight:600;cursor:pointer;transition:background .15s}
+.submit-btn:hover{background:var(--color-primary-hover)}
+.submit-btn:disabled{background:#999;cursor:not-allowed}
+.success-msg{display:none;text-align:center;padding:3rem 2rem;background:var(--color-surface);border-radius:var(--radius-lg);box-shadow:var(--shadow-md);margin-top:1rem}
+.success-msg h2{color:var(--color-primary);font-size:1.4rem;margin-bottom:.5rem}
+.success-msg p{color:var(--color-text-muted);margin-bottom:.5rem}
+.download-btn{display:inline-block;margin-top:1rem;background:#374151;color:white;border:none;border-radius:var(--radius-md);padding:.7rem 1.4rem;font-size:.9rem;font-weight:600;cursor:pointer;transition:background .15s}
+.download-btn:hover{background:#1f2937}
+.error-msg{display:none;background:#fef2f2;border:1px solid #fca5a5;border-radius:var(--radius-md);padding:1rem 1.25rem;margin-top:1rem;color:#991b1b;font-size:.9rem;text-align:center}
+</style>
+</head>
+<body>
+<div class="container">
+  <header>
+    <h1>Оценка смеховой экспрессии</h1>
+    <p>Прослушай каждую запись и ответь на вопросы</p>
+  </header>
+
+  <form id="survey" onsubmit="submitForm(event)">
+    <div class="respondent-block">
+      <h3>👤 Данные участника</h3>
+      <div class="fields">
+        <div class="field"><label>Имя ребёнка *</label><input type="text" name="Имя" placeholder="Например: Саша" required></div>
+        
+        <div class="field"><label>Возраст *</label><input type="number" name="Возраст" placeholder="лет" min="5" max="18" required></div>
+        <div class="field"><label>Пол *</label>
+          <select name="Пол" required>
+            <option value="">— выбери —</option>
+            <option value="Мальчик">Мальчик</option>
+            <option value="Девочка">Девочка</option>
+          </select>
+        </div>
+        
+      </div>
+    </div>
+
+    <div class="nav-chips">
+      <a class="nav-chip" href="#laugh1">Смех 1</a><a class="nav-chip" href="#laugh2">Смех 2</a><a class="nav-chip" href="#laugh3">Смех 3</a><a class="nav-chip" href="#laugh4">Смех 4</a><a class="nav-chip" href="#laugh5">Смех 5</a><a class="nav-chip" href="#laugh6">Смех 6</a><a class="nav-chip" href="#laugh7">Смех 7</a><a class="nav-chip" href="#laugh8">Смех 8</a><a class="nav-chip" href="#laugh9">Смех 9</a><a class="nav-chip" href="#laugh10">Смех 10</a><a class="nav-chip" href="#laugh11">Смех 11</a><a class="nav-chip" href="#laugh12">Смех 12</a><a class="nav-chip" href="#laugh13">Смех 13</a><a class="nav-chip" href="#laugh14">Смех 14</a><a class="nav-chip" href="#laugh15">Смех 15</a><a class="nav-chip" href="#laugh16">Смех 16</a><a class="nav-chip" href="#laugh17">Смех 17</a><a class="nav-chip" href="#laugh18">Смех 18</a><a class="nav-chip" href="#laugh19">Смех 19</a><a class="nav-chip" href="#laugh20">Смех 20</a><a class="nav-chip" href="#laugh21">Смех 21</a><a class="nav-chip" href="#laugh22">Смех 22</a><a class="nav-chip" href="#laugh23">Смех 23</a><a class="nav-chip" href="#laugh24">Смех 24</a><a class="nav-chip" href="#laugh25">Смех 25</a><a class="nav-chip" href="#laugh26">Смех 26</a><a class="nav-chip" href="#laugh27">Смех 27</a><a class="nav-chip" href="#laugh28">Смех 28</a><a class="nav-chip" href="#laugh29">Смех 29</a><a class="nav-chip" href="#laugh30">Смех 30</a>
+    </div>
+
+    <div class="progress-wrap">
+      <div class="progress-bar-bg"><div class="progress-bar-fill" id="progressFill"></div></div>
+      <div class="progress-label" id="progressLabel">0 из 30 блоков заполнено</div>
+    </div>
+
+  <div class="laugh-block" id="laugh1">
+    <div class="laugh-header"><div class="laugh-number">1</div><h2>Смех 1</h2></div>
+    <div class="audio-section">
+      <div class="audio-label">🎧 Аудиозапись</div>
+      <audio controls><source src="laugh1.mp3" type="audio/mpeg">Ваш браузер не поддерживает аудио.</audio>
+      <div class="audio-upload-hint">Файл: <b>laugh1.mp3</b></div>
+    </div>
+    <div class="questions">
+      <div class="question"><div class="question-title">Какой этот смех?</div><div class="options"><label class="option"><input type="radio" name="Смех1_тип" value="Добрый" required><span>Добрый</span></label><label class="option"><input type="radio" name="Смех1_тип" value="Нейтральный"><span>Нейтральный</span></label><label class="option"><input type="radio" name="Смех1_тип" value="Злой"><span>Злой</span></label></div></div>
+      <div class="question"><div class="question-title">Как тебе этот смех?</div><div class="options"><label class="option"><input type="radio" name="Смех1_ощущение" value="Приятный" required><span>Приятный</span></label><label class="option"><input type="radio" name="Смех1_ощущение" value="Безразлично"><span>Безразлично</span></label><label class="option"><input type="radio" name="Смех1_ощущение" value="Неприятный"><span>Неприятный</span></label></div></div>
+      <div class="question"><div class="question-title">Хочется ли тебе улыбнуться или засмеяться вместе?</div><div class="options"><label class="option"><input type="radio" name="Смех1_улыбка" value="Да" required><span>Да</span></label><label class="option"><input type="radio" name="Смех1_улыбка" value="Нет"><span>Нет</span></label></div></div>
+      
+      
+      <div class="question"><div class="question-title">Как ты думаешь, ему/ей весело или он/она притворяется?</div><div class="options"><label class="option"><input type="radio" name="Смех1_искренность" value="Весело" required><span>Весело</span></label><label class="option"><input type="radio" name="Смех1_искренность" value="Притворяется"><span>Притворяется</span></label></div></div>
+      <div class="question"><div class="question-title">Кто и в какой ситуации смеётся?</div><textarea class="text-input" name="Смех1_ситуация" placeholder="Напиши, кто смеётся и в какой ситуации..."></textarea></div>
+      <div class="question"><div class="question-title">Хотел бы ты быть рядом с этим человеком?</div><div class="options"><label class="option"><input type="radio" name="Смех1_рядом" value="Да" required><span>Да</span></label><label class="option"><input type="radio" name="Смех1_рядом" value="Нет"><span>Нет</span></label></div></div>
+    </div>
+  </div>
+
+  <div class="laugh-block" id="laugh2">
+    <div class="laugh-header"><div class="laugh-number">2</div><h2>Смех 2</h2></div>
+    <div class="audio-section">
+      <div class="audio-label">🎧 Аудиозапись</div>
+      <audio controls><source src="laugh2.mp3" type="audio/mpeg">Ваш браузер не поддерживает аудио.</audio>
+      <div class="audio-upload-hint">Файл: <b>laugh2.mp3</b></div>
+    </div>
+    <div class="questions">
+      <div class="question"><div class="question-title">Какой этот смех?</div><div class="options"><label class="option"><input type="radio" name="Смех2_тип" value="Добрый" required><span>Добрый</span></label><label class="option"><input type="radio" name="Смех2_тип" value="Нейтральный"><span>Нейтральный</span></label><label class="option"><input type="radio" name="Смех2_тип" value="Злой"><span>Злой</span></label></div></div>
+      <div class="question"><div class="question-title">Как тебе этот смех?</div><div class="options"><label class="option"><input type="radio" name="Смех2_ощущение" value="Приятный" required><span>Приятный</span></label><label class="option"><input type="radio" name="Смех2_ощущение" value="Безразлично"><span>Безразлично</span></label><label class="option"><input type="radio" name="Смех2_ощущение" value="Неприятный"><span>Неприятный</span></label></div></div>
+      <div class="question"><div class="question-title">Хочется ли тебе улыбнуться или засмеяться вместе?</div><div class="options"><label class="option"><input type="radio" name="Смех2_улыбка" value="Да" required><span>Да</span></label><label class="option"><input type="radio" name="Смех2_улыбка" value="Нет"><span>Нет</span></label></div></div>
+      
+      
+      <div class="question"><div class="question-title">Как ты думаешь, ему/ей весело или он/она притворяется?</div><div class="options"><label class="option"><input type="radio" name="Смех2_искренность" value="Весело" required><span>Весело</span></label><label class="option"><input type="radio" name="Смех2_искренность" value="Притворяется"><span>Притворяется</span></label></div></div>
+      <div class="question"><div class="question-title">Кто и в какой ситуации смеётся?</div><textarea class="text-input" name="Смех2_ситуация" placeholder="Напиши, кто смеётся и в какой ситуации..."></textarea></div>
+      <div class="question"><div class="question-title">Хотел бы ты быть рядом с этим человеком?</div><div class="options"><label class="option"><input type="radio" name="Смех2_рядом" value="Да" required><span>Да</span></label><label class="option"><input type="radio" name="Смех2_рядом" value="Нет"><span>Нет</span></label></div></div>
+    </div>
+  </div>
+
+  <div class="laugh-block" id="laugh3">
+    <div class="laugh-header"><div class="laugh-number">3</div><h2>Смех 3</h2></div>
+    <div class="audio-section">
+      <div class="audio-label">🎧 Аудиозапись</div>
+      <audio controls><source src="laugh3.mp3" type="audio/mpeg">Ваш браузер не поддерживает аудио.</audio>
+      <div class="audio-upload-hint">Файл: <b>laugh3.mp3</b></div>
+    </div>
+    <div class="questions">
+      <div class="question"><div class="question-title">Какой этот смех?</div><div class="options"><label class="option"><input type="radio" name="Смех3_тип" value="Добрый" required><span>Добрый</span></label><label class="option"><input type="radio" name="Смех3_тип" value="Нейтральный"><span>Нейтральный</span></label><label class="option"><input type="radio" name="Смех3_тип" value="Злой"><span>Злой</span></label></div></div>
+      <div class="question"><div class="question-title">Как тебе этот смех?</div><div class="options"><label class="option"><input type="radio" name="Смех3_ощущение" value="Приятный" required><span>Приятный</span></label><label class="option"><input type="radio" name="Смех3_ощущение" value="Безразлично"><span>Безразлично</span></label><label class="option"><input type="radio" name="Смех3_ощущение" value="Неприятный"><span>Неприятный</span></label></div></div>
+      <div class="question"><div class="question-title">Хочется ли тебе улыбнуться или засмеяться вместе?</div><div class="options"><label class="option"><input type="radio" name="Смех3_улыбка" value="Да" required><span>Да</span></label><label class="option"><input type="radio" name="Смех3_улыбка" value="Нет"><span>Нет</span></label></div></div>
+      
+      
+      <div class="question"><div class="question-title">Как ты думаешь, ему/ей весело или он/она притворяется?</div><div class="options"><label class="option"><input type="radio" name="Смех3_искренность" value="Весело" required><span>Весело</span></label><label class="option"><input type="radio" name="Смех3_искренность" value="Притворяется"><span>Притворяется</span></label></div></div>
+      <div class="question"><div class="question-title">Кто и в какой ситуации смеётся?</div><textarea class="text-input" name="Смех3_ситуация" placeholder="Напиши, кто смеётся и в какой ситуации..."></textarea></div>
+      <div class="question"><div class="question-title">Хотел бы ты быть рядом с этим человеком?</div><div class="options"><label class="option"><input type="radio" name="Смех3_рядом" value="Да" required><span>Да</span></label><label class="option"><input type="radio" name="Смех3_рядом" value="Нет"><span>Нет</span></label></div></div>
+    </div>
+  </div>
+
+  <div class="laugh-block" id="laugh4">
+    <div class="laugh-header"><div class="laugh-number">4</div><h2>Смех 4</h2></div>
+    <div class="audio-section">
+      <div class="audio-label">🎧 Аудиозапись</div>
+      <audio controls><source src="laugh4.mp3" type="audio/mpeg">Ваш браузер не поддерживает аудио.</audio>
+      <div class="audio-upload-hint">Файл: <b>laugh4.mp3</b></div>
+    </div>
+    <div class="questions">
+      <div class="question"><div class="question-title">Какой этот смех?</div><div class="options"><label class="option"><input type="radio" name="Смех4_тип" value="Добрый" required><span>Добрый</span></label><label class="option"><input type="radio" name="Смех4_тип" value="Нейтральный"><span>Нейтральный</span></label><label class="option"><input type="radio" name="Смех4_тип" value="Злой"><span>Злой</span></label></div></div>
+      <div class="question"><div class="question-title">Как тебе этот смех?</div><div class="options"><label class="option"><input type="radio" name="Смех4_ощущение" value="Приятный" required><span>Приятный</span></label><label class="option"><input type="radio" name="Смех4_ощущение" value="Безразлично"><span>Безразлично</span></label><label class="option"><input type="radio" name="Смех4_ощущение" value="Неприятный"><span>Неприятный</span></label></div></div>
+      <div class="question"><div class="question-title">Хочется ли тебе улыбнуться или засмеяться вместе?</div><div class="options"><label class="option"><input type="radio" name="Смех4_улыбка" value="Да" required><span>Да</span></label><label class="option"><input type="radio" name="Смех4_улыбка" value="Нет"><span>Нет</span></label></div></div>
+      
+      
+      <div class="question"><div class="question-title">Как ты думаешь, ему/ей весело или он/она притворяется?</div><div class="options"><label class="option"><input type="radio" name="Смех4_искренность" value="Весело" required><span>Весело</span></label><label class="option"><input type="radio" name="Смех4_искренность" value="Притворяется"><span>Притворяется</span></label></div></div>
+      <div class="question"><div class="question-title">Кто и в какой ситуации смеётся?</div><textarea class="text-input" name="Смех4_ситуация" placeholder="Напиши, кто смеётся и в какой ситуации..."></textarea></div>
+      <div class="question"><div class="question-title">Хотел бы ты быть рядом с этим человеком?</div><div class="options"><label class="option"><input type="radio" name="Смех4_рядом" value="Да" required><span>Да</span></label><label class="option"><input type="radio" name="Смех4_рядом" value="Нет"><span>Нет</span></label></div></div>
+    </div>
+  </div>
+
+  <div class="laugh-block" id="laugh5">
+    <div class="laugh-header"><div class="laugh-number">5</div><h2>Смех 5</h2></div>
+    <div class="audio-section">
+      <div class="audio-label">🎧 Аудиозапись</div>
+      <audio controls><source src="laugh5.mp3" type="audio/mpeg">Ваш браузер не поддерживает аудио.</audio>
+      <div class="audio-upload-hint">Файл: <b>laugh5.mp3</b></div>
+    </div>
+    <div class="questions">
+      <div class="question"><div class="question-title">Какой этот смех?</div><div class="options"><label class="option"><input type="radio" name="Смех5_тип" value="Добрый" required><span>Добрый</span></label><label class="option"><input type="radio" name="Смех5_тип" value="Нейтральный"><span>Нейтральный</span></label><label class="option"><input type="radio" name="Смех5_тип" value="Злой"><span>Злой</span></label></div></div>
+      <div class="question"><div class="question-title">Как тебе этот смех?</div><div class="options"><label class="option"><input type="radio" name="Смех5_ощущение" value="Приятный" required><span>Приятный</span></label><label class="option"><input type="radio" name="Смех5_ощущение" value="Безразлично"><span>Безразлично</span></label><label class="option"><input type="radio" name="Смех5_ощущение" value="Неприятный"><span>Неприятный</span></label></div></div>
+      <div class="question"><div class="question-title">Хочется ли тебе улыбнуться или засмеяться вместе?</div><div class="options"><label class="option"><input type="radio" name="Смех5_улыбка" value="Да" required><span>Да</span></label><label class="option"><input type="radio" name="Смех5_улыбка" value="Нет"><span>Нет</span></label></div></div>
+      
+      
+      <div class="question"><div class="question-title">Как ты думаешь, ему/ей весело или он/она притворяется?</div><div class="options"><label class="option"><input type="radio" name="Смех5_искренность" value="Весело" required><span>Весело</span></label><label class="option"><input type="radio" name="Смех5_искренность" value="Притворяется"><span>Притворяется</span></label></div></div>
+      <div class="question"><div class="question-title">Кто и в какой ситуации смеётся?</div><textarea class="text-input" name="Смех5_ситуация" placeholder="Напиши, кто смеётся и в какой ситуации..."></textarea></div>
+      <div class="question"><div class="question-title">Хотел бы ты быть рядом с этим человеком?</div><div class="options"><label class="option"><input type="radio" name="Смех5_рядом" value="Да" required><span>Да</span></label><label class="option"><input type="radio" name="Смех5_рядом" value="Нет"><span>Нет</span></label></div></div>
+    </div>
+  </div>
+
+  <div class="laugh-block" id="laugh6">
+    <div class="laugh-header"><div class="laugh-number">6</div><h2>Смех 6</h2></div>
+    <div class="audio-section">
+      <div class="audio-label">🎧 Аудиозапись</div>
+      <audio controls><source src="laugh6.mp3" type="audio/mpeg">Ваш браузер не поддерживает аудио.</audio>
+      <div class="audio-upload-hint">Файл: <b>laugh6.mp3</b></div>
+    </div>
+    <div class="questions">
+      <div class="question"><div class="question-title">Какой этот смех?</div><div class="options"><label class="option"><input type="radio" name="Смех6_тип" value="Добрый" required><span>Добрый</span></label><label class="option"><input type="radio" name="Смех6_тип" value="Нейтральный"><span>Нейтральный</span></label><label class="option"><input type="radio" name="Смех6_тип" value="Злой"><span>Злой</span></label></div></div>
+      <div class="question"><div class="question-title">Как тебе этот смех?</div><div class="options"><label class="option"><input type="radio" name="Смех6_ощущение" value="Приятный" required><span>Приятный</span></label><label class="option"><input type="radio" name="Смех6_ощущение" value="Безразлично"><span>Безразлично</span></label><label class="option"><input type="radio" name="Смех6_ощущение" value="Неприятный"><span>Неприятный</span></label></div></div>
+      <div class="question"><div class="question-title">Хочется ли тебе улыбнуться или засмеяться вместе?</div><div class="options"><label class="option"><input type="radio" name="Смех6_улыбка" value="Да" required><span>Да</span></label><label class="option"><input type="radio" name="Смех6_улыбка" value="Нет"><span>Нет</span></label></div></div>
+      
+      
+      <div class="question"><div class="question-title">Как ты думаешь, ему/ей весело или он/она притворяется?</div><div class="options"><label class="option"><input type="radio" name="Смех6_искренность" value="Весело" required><span>Весело</span></label><label class="option"><input type="radio" name="Смех6_искренность" value="Притворяется"><span>Притворяется</span></label></div></div>
+      <div class="question"><div class="question-title">Кто и в какой ситуации смеётся?</div><textarea class="text-input" name="Смех6_ситуация" placeholder="Напиши, кто смеётся и в какой ситуации..."></textarea></div>
+      <div class="question"><div class="question-title">Хотел бы ты быть рядом с этим человеком?</div><div class="options"><label class="option"><input type="radio" name="Смех6_рядом" value="Да" required><span>Да</span></label><label class="option"><input type="radio" name="Смех6_рядом" value="Нет"><span>Нет</span></label></div></div>
+    </div>
+  </div>
+
+  <div class="laugh-block" id="laugh7">
+    <div class="laugh-header"><div class="laugh-number">7</div><h2>Смех 7</h2></div>
+    <div class="audio-section">
+      <div class="audio-label">🎧 Аудиозапись</div>
+      <audio controls><source src="laugh7.mp3" type="audio/mpeg">Ваш браузер не поддерживает аудио.</audio>
+      <div class="audio-upload-hint">Файл: <b>laugh7.mp3</b></div>
+    </div>
+    <div class="questions">
+      <div class="question"><div class="question-title">Какой этот смех?</div><div class="options"><label class="option"><input type="radio" name="Смех7_тип" value="Добрый" required><span>Добрый</span></label><label class="option"><input type="radio" name="Смех7_тип" value="Нейтральный"><span>Нейтральный</span></label><label class="option"><input type="radio" name="Смех7_тип" value="Злой"><span>Злой</span></label></div></div>
+      <div class="question"><div class="question-title">Как тебе этот смех?</div><div class="options"><label class="option"><input type="radio" name="Смех7_ощущение" value="Приятный" required><span>Приятный</span></label><label class="option"><input type="radio" name="Смех7_ощущение" value="Безразлично"><span>Безразлично</span></label><label class="option"><input type="radio" name="Смех7_ощущение" value="Неприятный"><span>Неприятный</span></label></div></div>
+      <div class="question"><div class="question-title">Хочется ли тебе улыбнуться или засмеяться вместе?</div><div class="options"><label class="option"><input type="radio" name="Смех7_улыбка" value="Да" required><span>Да</span></label><label class="option"><input type="radio" name="Смех7_улыбка" value="Нет"><span>Нет</span></label></div></div>
+      
+      
+      <div class="question"><div class="question-title">Как ты думаешь, ему/ей весело или он/она притворяется?</div><div class="options"><label class="option"><input type="radio" name="Смех7_искренность" value="Весело" required><span>Весело</span></label><label class="option"><input type="radio" name="Смех7_искренность" value="Притворяется"><span>Притворяется</span></label></div></div>
+      <div class="question"><div class="question-title">Кто и в какой ситуации смеётся?</div><textarea class="text-input" name="Смех7_ситуация" placeholder="Напиши, кто смеётся и в какой ситуации..."></textarea></div>
+      <div class="question"><div class="question-title">Хотел бы ты быть рядом с этим человеком?</div><div class="options"><label class="option"><input type="radio" name="Смех7_рядом" value="Да" required><span>Да</span></label><label class="option"><input type="radio" name="Смех7_рядом" value="Нет"><span>Нет</span></label></div></div>
+    </div>
+  </div>
+
+  <div class="laugh-block" id="laugh8">
+    <div class="laugh-header"><div class="laugh-number">8</div><h2>Смех 8</h2></div>
+    <div class="audio-section">
+      <div class="audio-label">🎧 Аудиозапись</div>
+      <audio controls><source src="laugh8.mp3" type="audio/mpeg">Ваш браузер не поддерживает аудио.</audio>
+      <div class="audio-upload-hint">Файл: <b>laugh8.mp3</b></div>
+    </div>
+    <div class="questions">
+      <div class="question"><div class="question-title">Какой этот смех?</div><div class="options"><label class="option"><input type="radio" name="Смех8_тип" value="Добрый" required><span>Добрый</span></label><label class="option"><input type="radio" name="Смех8_тип" value="Нейтральный"><span>Нейтральный</span></label><label class="option"><input type="radio" name="Смех8_тип" value="Злой"><span>Злой</span></label></div></div>
+      <div class="question"><div class="question-title">Как тебе этот смех?</div><div class="options"><label class="option"><input type="radio" name="Смех8_ощущение" value="Приятный" required><span>Приятный</span></label><label class="option"><input type="radio" name="Смех8_ощущение" value="Безразлично"><span>Безразлично</span></label><label class="option"><input type="radio" name="Смех8_ощущение" value="Неприятный"><span>Неприятный</span></label></div></div>
+      <div class="question"><div class="question-title">Хочется ли тебе улыбнуться или засмеяться вместе?</div><div class="options"><label class="option"><input type="radio" name="Смех8_улыбка" value="Да" required><span>Да</span></label><label class="option"><input type="radio" name="Смех8_улыбка" value="Нет"><span>Нет</span></label></div></div>
+      
+      
+      <div class="question"><div class="question-title">Как ты думаешь, ему/ей весело или он/она притворяется?</div><div class="options"><label class="option"><input type="radio" name="Смех8_искренность" value="Весело" required><span>Весело</span></label><label class="option"><input type="radio" name="Смех8_искренность" value="Притворяется"><span>Притворяется</span></label></div></div>
+      <div class="question"><div class="question-title">Кто и в какой ситуации смеётся?</div><textarea class="text-input" name="Смех8_ситуация" placeholder="Напиши, кто смеётся и в какой ситуации..."></textarea></div>
+      <div class="question"><div class="question-title">Хотел бы ты быть рядом с этим человеком?</div><div class="options"><label class="option"><input type="radio" name="Смех8_рядом" value="Да" required><span>Да</span></label><label class="option"><input type="radio" name="Смех8_рядом" value="Нет"><span>Нет</span></label></div></div>
+    </div>
+  </div>
+
+  <div class="laugh-block" id="laugh9">
+    <div class="laugh-header"><div class="laugh-number">9</div><h2>Смех 9</h2></div>
+    <div class="audio-section">
+      <div class="audio-label">🎧 Аудиозапись</div>
+      <audio controls><source src="laugh9.mp3" type="audio/mpeg">Ваш браузер не поддерживает аудио.</audio>
+      <div class="audio-upload-hint">Файл: <b>laugh9.mp3</b></div>
+    </div>
+    <div class="questions">
+      <div class="question"><div class="question-title">Какой этот смех?</div><div class="options"><label class="option"><input type="radio" name="Смех9_тип" value="Добрый" required><span>Добрый</span></label><label class="option"><input type="radio" name="Смех9_тип" value="Нейтральный"><span>Нейтральный</span></label><label class="option"><input type="radio" name="Смех9_тип" value="Злой"><span>Злой</span></label></div></div>
+      <div class="question"><div class="question-title">Как тебе этот смех?</div><div class="options"><label class="option"><input type="radio" name="Смех9_ощущение" value="Приятный" required><span>Приятный</span></label><label class="option"><input type="radio" name="Смех9_ощущение" value="Безразлично"><span>Безразлично</span></label><label class="option"><input type="radio" name="Смех9_ощущение" value="Неприятный"><span>Неприятный</span></label></div></div>
+      <div class="question"><div class="question-title">Хочется ли тебе улыбнуться или засмеяться вместе?</div><div class="options"><label class="option"><input type="radio" name="Смех9_улыбка" value="Да" required><span>Да</span></label><label class="option"><input type="radio" name="Смех9_улыбка" value="Нет"><span>Нет</span></label></div></div>
+      
+      
+      <div class="question"><div class="question-title">Как ты думаешь, ему/ей весело или он/она притворяется?</div><div class="options"><label class="option"><input type="radio" name="Смех9_искренность" value="Весело" required><span>Весело</span></label><label class="option"><input type="radio" name="Смех9_искренность" value="Притворяется"><span>Притворяется</span></label></div></div>
+      <div class="question"><div class="question-title">Кто и в какой ситуации смеётся?</div><textarea class="text-input" name="Смех9_ситуация" placeholder="Напиши, кто смеётся и в какой ситуации..."></textarea></div>
+      <div class="question"><div class="question-title">Хотел бы ты быть рядом с этим человеком?</div><div class="options"><label class="option"><input type="radio" name="Смех9_рядом" value="Да" required><span>Да</span></label><label class="option"><input type="radio" name="Смех9_рядом" value="Нет"><span>Нет</span></label></div></div>
+    </div>
+  </div>
+
+  <div class="laugh-block" id="laugh10">
+    <div class="laugh-header"><div class="laugh-number">10</div><h2>Смех 10</h2></div>
+    <div class="audio-section">
+      <div class="audio-label">🎧 Аудиозапись</div>
+      <audio controls><source src="laugh10.mp3" type="audio/mpeg">Ваш браузер не поддерживает аудио.</audio>
+      <div class="audio-upload-hint">Файл: <b>laugh10.mp3</b></div>
+    </div>
+    <div class="questions">
+      <div class="question"><div class="question-title">Какой этот смех?</div><div class="options"><label class="option"><input type="radio" name="Смех10_тип" value="Добрый" required><span>Добрый</span></label><label class="option"><input type="radio" name="Смех10_тип" value="Нейтральный"><span>Нейтральный</span></label><label class="option"><input type="radio" name="Смех10_тип" value="Злой"><span>Злой</span></label></div></div>
+      <div class="question"><div class="question-title">Как тебе этот смех?</div><div class="options"><label class="option"><input type="radio" name="Смех10_ощущение" value="Приятный" required><span>Приятный</span></label><label class="option"><input type="radio" name="Смех10_ощущение" value="Безразлично"><span>Безразлично</span></label><label class="option"><input type="radio" name="Смех10_ощущение" value="Неприятный"><span>Неприятный</span></label></div></div>
+      <div class="question"><div class="question-title">Хочется ли тебе улыбнуться или засмеяться вместе?</div><div class="options"><label class="option"><input type="radio" name="Смех10_улыбка" value="Да" required><span>Да</span></label><label class="option"><input type="radio" name="Смех10_улыбка" value="Нет"><span>Нет</span></label></div></div>
+      
+      
+      <div class="question"><div class="question-title">Как ты думаешь, ему/ей весело или он/она притворяется?</div><div class="options"><label class="option"><input type="radio" name="Смех10_искренность" value="Весело" required><span>Весело</span></label><label class="option"><input type="radio" name="Смех10_искренность" value="Притворяется"><span>Притворяется</span></label></div></div>
+      <div class="question"><div class="question-title">Кто и в какой ситуации смеётся?</div><textarea class="text-input" name="Смех10_ситуация" placeholder="Напиши, кто смеётся и в какой ситуации..."></textarea></div>
+      <div class="question"><div class="question-title">Хотел бы ты быть рядом с этим человеком?</div><div class="options"><label class="option"><input type="radio" name="Смех10_рядом" value="Да" required><span>Да</span></label><label class="option"><input type="radio" name="Смех10_рядом" value="Нет"><span>Нет</span></label></div></div>
+    </div>
+  </div>
+
+    
+
+  
+
+  <div class="laugh-block" id="laugh11">
+    <div class="laugh-header"><div class="laugh-number">11</div><h2>Смех 11</h2></div>
+    <div class="audio-section">
+      <div class="audio-label">🎧 Аудиозапись</div>
+      <audio controls><source src="laugh11.wav" type="audio/wav">Ваш браузер не поддерживает аудио.</audio>
+      <div class="audio-upload-hint">Файл: <b>laugh11.wav</b></div>
+    </div>
+    <div class="questions">
+      <div class="question"><div class="question-title">Какой этот смех?</div><div class="options"><label class="option"><input type="radio" name="Смех11_тип" value="Добрый" required><span>Добрый</span></label><label class="option"><input type="radio" name="Смех11_тип" value="Нейтральный"><span>Нейтральный</span></label><label class="option"><input type="radio" name="Смех11_тип" value="Злой"><span>Злой</span></label></div></div>
+      <div class="question"><div class="question-title">Как тебе этот смех?</div><div class="options"><label class="option"><input type="radio" name="Смех11_ощущение" value="Приятный" required><span>Приятный</span></label><label class="option"><input type="radio" name="Смех11_ощущение" value="Безразлично"><span>Безразлично</span></label><label class="option"><input type="radio" name="Смех11_ощущение" value="Неприятный"><span>Неприятный</span></label></div></div>
+      <div class="question"><div class="question-title">Хочется ли тебе улыбнуться или засмеяться вместе?</div><div class="options"><label class="option"><input type="radio" name="Смех11_улыбка" value="Да" required><span>Да</span></label><label class="option"><input type="radio" name="Смех11_улыбка" value="Нет"><span>Нет</span></label></div></div>
+      <div class="question"><div class="question-title">Как ты думаешь, ему/ей весело или он/она притворяется?</div><div class="options"><label class="option"><input type="radio" name="Смех11_искренность" value="Весело" required><span>Весело</span></label><label class="option"><input type="radio" name="Смех11_искренность" value="Притворяется"><span>Притворяется</span></label></div></div>
+      <div class="question"><div class="question-title">Кто и в какой ситуации смеётся?</div><textarea class="text-input" name="Смех11_ситуация" placeholder="Напиши, кто смеётся и в какой ситуации..."></textarea></div>
+      <div class="question"><div class="question-title">Хотел бы ты быть рядом с этим человеком?</div><div class="options"><label class="option"><input type="radio" name="Смех11_рядом" value="Да" required><span>Да</span></label><label class="option"><input type="radio" name="Смех11_рядом" value="Нет"><span>Нет</span></label></div></div>
+    </div>
+  </div>
+
+  <div class="laugh-block" id="laugh12">
+    <div class="laugh-header"><div class="laugh-number">12</div><h2>Смех 12</h2></div>
+    <div class="audio-section">
+      <div class="audio-label">🎧 Аудиозапись</div>
+      <audio controls><source src="laugh12.wav" type="audio/wav">Ваш браузер не поддерживает аудио.</audio>
+      <div class="audio-upload-hint">Файл: <b>laugh12.wav</b></div>
+    </div>
+    <div class="questions">
+      <div class="question"><div class="question-title">Какой этот смех?</div><div class="options"><label class="option"><input type="radio" name="Смех12_тип" value="Добрый" required><span>Добрый</span></label><label class="option"><input type="radio" name="Смех12_тип" value="Нейтральный"><span>Нейтральный</span></label><label class="option"><input type="radio" name="Смех12_тип" value="Злой"><span>Злой</span></label></div></div>
+      <div class="question"><div class="question-title">Как тебе этот смех?</div><div class="options"><label class="option"><input type="radio" name="Смех12_ощущение" value="Приятный" required><span>Приятный</span></label><label class="option"><input type="radio" name="Смех12_ощущение" value="Безразлично"><span>Безразлично</span></label><label class="option"><input type="radio" name="Смех12_ощущение" value="Неприятный"><span>Неприятный</span></label></div></div>
+      <div class="question"><div class="question-title">Хочется ли тебе улыбнуться или засмеяться вместе?</div><div class="options"><label class="option"><input type="radio" name="Смех12_улыбка" value="Да" required><span>Да</span></label><label class="option"><input type="radio" name="Смех12_улыбка" value="Нет"><span>Нет</span></label></div></div>
+      <div class="question"><div class="question-title">Как ты думаешь, ему/ей весело или он/она притворяется?</div><div class="options"><label class="option"><input type="radio" name="Смех12_искренность" value="Весело" required><span>Весело</span></label><label class="option"><input type="radio" name="Смех12_искренность" value="Притворяется"><span>Притворяется</span></label></div></div>
+      <div class="question"><div class="question-title">Кто и в какой ситуации смеётся?</div><textarea class="text-input" name="Смех12_ситуация" placeholder="Напиши, кто смеётся и в какой ситуации..."></textarea></div>
+      <div class="question"><div class="question-title">Хотел бы ты быть рядом с этим человеком?</div><div class="options"><label class="option"><input type="radio" name="Смех12_рядом" value="Да" required><span>Да</span></label><label class="option"><input type="radio" name="Смех12_рядом" value="Нет"><span>Нет</span></label></div></div>
+    </div>
+  </div>
+
+  <div class="laugh-block" id="laugh13">
+    <div class="laugh-header"><div class="laugh-number">13</div><h2>Смех 13</h2></div>
+    <div class="audio-section">
+      <div class="audio-label">🎧 Аудиозапись</div>
+      <audio controls><source src="laugh13.wav" type="audio/wav">Ваш браузер не поддерживает аудио.</audio>
+      <div class="audio-upload-hint">Файл: <b>laugh13.wav</b></div>
+    </div>
+    <div class="questions">
+      <div class="question"><div class="question-title">Какой этот смех?</div><div class="options"><label class="option"><input type="radio" name="Смех13_тип" value="Добрый" required><span>Добрый</span></label><label class="option"><input type="radio" name="Смех13_тип" value="Нейтральный"><span>Нейтральный</span></label><label class="option"><input type="radio" name="Смех13_тип" value="Злой"><span>Злой</span></label></div></div>
+      <div class="question"><div class="question-title">Как тебе этот смех?</div><div class="options"><label class="option"><input type="radio" name="Смех13_ощущение" value="Приятный" required><span>Приятный</span></label><label class="option"><input type="radio" name="Смех13_ощущение" value="Безразлично"><span>Безразлично</span></label><label class="option"><input type="radio" name="Смех13_ощущение" value="Неприятный"><span>Неприятный</span></label></div></div>
+      <div class="question"><div class="question-title">Хочется ли тебе улыбнуться или засмеяться вместе?</div><div class="options"><label class="option"><input type="radio" name="Смех13_улыбка" value="Да" required><span>Да</span></label><label class="option"><input type="radio" name="Смех13_улыбка" value="Нет"><span>Нет</span></label></div></div>
+      <div class="question"><div class="question-title">Как ты думаешь, ему/ей весело или он/она притворяется?</div><div class="options"><label class="option"><input type="radio" name="Смех13_искренность" value="Весело" required><span>Весело</span></label><label class="option"><input type="radio" name="Смех13_искренность" value="Притворяется"><span>Притворяется</span></label></div></div>
+      <div class="question"><div class="question-title">Кто и в какой ситуации смеётся?</div><textarea class="text-input" name="Смех13_ситуация" placeholder="Напиши, кто смеётся и в какой ситуации..."></textarea></div>
+      <div class="question"><div class="question-title">Хотел бы ты быть рядом с этим человеком?</div><div class="options"><label class="option"><input type="radio" name="Смех13_рядом" value="Да" required><span>Да</span></label><label class="option"><input type="radio" name="Смех13_рядом" value="Нет"><span>Нет</span></label></div></div>
+    </div>
+  </div>
+
+  <div class="laugh-block" id="laugh14">
+    <div class="laugh-header"><div class="laugh-number">14</div><h2>Смех 14</h2></div>
+    <div class="audio-section">
+      <div class="audio-label">🎧 Аудиозапись</div>
+      <audio controls><source src="laugh14.wav" type="audio/wav">Ваш браузер не поддерживает аудио.</audio>
+      <div class="audio-upload-hint">Файл: <b>laugh14.wav</b></div>
+    </div>
+    <div class="questions">
+      <div class="question"><div class="question-title">Какой этот смех?</div><div class="options"><label class="option"><input type="radio" name="Смех14_тип" value="Добрый" required><span>Добрый</span></label><label class="option"><input type="radio" name="Смех14_тип" value="Нейтральный"><span>Нейтральный</span></label><label class="option"><input type="radio" name="Смех14_тип" value="Злой"><span>Злой</span></label></div></div>
+      <div class="question"><div class="question-title">Как тебе этот смех?</div><div class="options"><label class="option"><input type="radio" name="Смех14_ощущение" value="Приятный" required><span>Приятный</span></label><label class="option"><input type="radio" name="Смех14_ощущение" value="Безразлично"><span>Безразлично</span></label><label class="option"><input type="radio" name="Смех14_ощущение" value="Неприятный"><span>Неприятный</span></label></div></div>
+      <div class="question"><div class="question-title">Хочется ли тебе улыбнуться или засмеяться вместе?</div><div class="options"><label class="option"><input type="radio" name="Смех14_улыбка" value="Да" required><span>Да</span></label><label class="option"><input type="radio" name="Смех14_улыбка" value="Нет"><span>Нет</span></label></div></div>
+      <div class="question"><div class="question-title">Как ты думаешь, ему/ей весело или он/она притворяется?</div><div class="options"><label class="option"><input type="radio" name="Смех14_искренность" value="Весело" required><span>Весело</span></label><label class="option"><input type="radio" name="Смех14_искренность" value="Притворяется"><span>Притворяется</span></label></div></div>
+      <div class="question"><div class="question-title">Кто и в какой ситуации смеётся?</div><textarea class="text-input" name="Смех14_ситуация" placeholder="Напиши, кто смеётся и в какой ситуации..."></textarea></div>
+      <div class="question"><div class="question-title">Хотел бы ты быть рядом с этим человеком?</div><div class="options"><label class="option"><input type="radio" name="Смех14_рядом" value="Да" required><span>Да</span></label><label class="option"><input type="radio" name="Смех14_рядом" value="Нет"><span>Нет</span></label></div></div>
+    </div>
+  </div>
+
+  <div class="laugh-block" id="laugh15">
+    <div class="laugh-header"><div class="laugh-number">15</div><h2>Смех 15</h2></div>
+    <div class="audio-section">
+      <div class="audio-label">🎧 Аудиозапись</div>
+      <audio controls><source src="laugh15.wav" type="audio/wav">Ваш браузер не поддерживает аудио.</audio>
+      <div class="audio-upload-hint">Файл: <b>laugh15.wav</b></div>
+    </div>
+    <div class="questions">
+      <div class="question"><div class="question-title">Какой этот смех?</div><div class="options"><label class="option"><input type="radio" name="Смех15_тип" value="Добрый" required><span>Добрый</span></label><label class="option"><input type="radio" name="Смех15_тип" value="Нейтральный"><span>Нейтральный</span></label><label class="option"><input type="radio" name="Смех15_тип" value="Злой"><span>Злой</span></label></div></div>
+      <div class="question"><div class="question-title">Как тебе этот смех?</div><div class="options"><label class="option"><input type="radio" name="Смех15_ощущение" value="Приятный" required><span>Приятный</span></label><label class="option"><input type="radio" name="Смех15_ощущение" value="Безразлично"><span>Безразлично</span></label><label class="option"><input type="radio" name="Смех15_ощущение" value="Неприятный"><span>Неприятный</span></label></div></div>
+      <div class="question"><div class="question-title">Хочется ли тебе улыбнуться или засмеяться вместе?</div><div class="options"><label class="option"><input type="radio" name="Смех15_улыбка" value="Да" required><span>Да</span></label><label class="option"><input type="radio" name="Смех15_улыбка" value="Нет"><span>Нет</span></label></div></div>
+      <div class="question"><div class="question-title">Как ты думаешь, ему/ей весело или он/она притворяется?</div><div class="options"><label class="option"><input type="radio" name="Смех15_искренность" value="Весело" required><span>Весело</span></label><label class="option"><input type="radio" name="Смех15_искренность" value="Притворяется"><span>Притворяется</span></label></div></div>
+      <div class="question"><div class="question-title">Кто и в какой ситуации смеётся?</div><textarea class="text-input" name="Смех15_ситуация" placeholder="Напиши, кто смеётся и в какой ситуации..."></textarea></div>
+      <div class="question"><div class="question-title">Хотел бы ты быть рядом с этим человеком?</div><div class="options"><label class="option"><input type="radio" name="Смех15_рядом" value="Да" required><span>Да</span></label><label class="option"><input type="radio" name="Смех15_рядом" value="Нет"><span>Нет</span></label></div></div>
+    </div>
+  </div>
+
+  <div class="laugh-block" id="laugh16">
+    <div class="laugh-header"><div class="laugh-number">16</div><h2>Смех 16</h2></div>
+    <div class="audio-section">
+      <div class="audio-label">🎧 Аудиозапись</div>
+      <audio controls><source src="laugh16.wav" type="audio/wav">Ваш браузер не поддерживает аудио.</audio>
+      <div class="audio-upload-hint">Файл: <b>laugh16.wav</b></div>
+    </div>
+    <div class="questions">
+      <div class="question"><div class="question-title">Какой этот смех?</div><div class="options"><label class="option"><input type="radio" name="Смех16_тип" value="Добрый" required><span>Добрый</span></label><label class="option"><input type="radio" name="Смех16_тип" value="Нейтральный"><span>Нейтральный</span></label><label class="option"><input type="radio" name="Смех16_тип" value="Злой"><span>Злой</span></label></div></div>
+      <div class="question"><div class="question-title">Как тебе этот смех?</div><div class="options"><label class="option"><input type="radio" name="Смех16_ощущение" value="Приятный" required><span>Приятный</span></label><label class="option"><input type="radio" name="Смех16_ощущение" value="Безразлично"><span>Безразлично</span></label><label class="option"><input type="radio" name="Смех16_ощущение" value="Неприятный"><span>Неприятный</span></label></div></div>
+      <div class="question"><div class="question-title">Хочется ли тебе улыбнуться или засмеяться вместе?</div><div class="options"><label class="option"><input type="radio" name="Смех16_улыбка" value="Да" required><span>Да</span></label><label class="option"><input type="radio" name="Смех16_улыбка" value="Нет"><span>Нет</span></label></div></div>
+      <div class="question"><div class="question-title">Как ты думаешь, ему/ей весело или он/она притворяется?</div><div class="options"><label class="option"><input type="radio" name="Смех16_искренность" value="Весело" required><span>Весело</span></label><label class="option"><input type="radio" name="Смех16_искренность" value="Притворяется"><span>Притворяется</span></label></div></div>
+      <div class="question"><div class="question-title">Кто и в какой ситуации смеётся?</div><textarea class="text-input" name="Смех16_ситуация" placeholder="Напиши, кто смеётся и в какой ситуации..."></textarea></div>
+      <div class="question"><div class="question-title">Хотел бы ты быть рядом с этим человеком?</div><div class="options"><label class="option"><input type="radio" name="Смех16_рядом" value="Да" required><span>Да</span></label><label class="option"><input type="radio" name="Смех16_рядом" value="Нет"><span>Нет</span></label></div></div>
+    </div>
+  </div>
+
+  <div class="laugh-block" id="laugh17">
+    <div class="laugh-header"><div class="laugh-number">17</div><h2>Смех 17</h2></div>
+    <div class="audio-section">
+      <div class="audio-label">🎧 Аудиозапись</div>
+      <audio controls><source src="laugh17.wav" type="audio/wav">Ваш браузер не поддерживает аудио.</audio>
+      <div class="audio-upload-hint">Файл: <b>laugh17.wav</b></div>
+    </div>
+    <div class="questions">
+      <div class="question"><div class="question-title">Какой этот смех?</div><div class="options"><label class="option"><input type="radio" name="Смех17_тип" value="Добрый" required><span>Добрый</span></label><label class="option"><input type="radio" name="Смех17_тип" value="Нейтральный"><span>Нейтральный</span></label><label class="option"><input type="radio" name="Смех17_тип" value="Злой"><span>Злой</span></label></div></div>
+      <div class="question"><div class="question-title">Как тебе этот смех?</div><div class="options"><label class="option"><input type="radio" name="Смех17_ощущение" value="Приятный" required><span>Приятный</span></label><label class="option"><input type="radio" name="Смех17_ощущение" value="Безразлично"><span>Безразлично</span></label><label class="option"><input type="radio" name="Смех17_ощущение" value="Неприятный"><span>Неприятный</span></label></div></div>
+      <div class="question"><div class="question-title">Хочется ли тебе улыбнуться или засмеяться вместе?</div><div class="options"><label class="option"><input type="radio" name="Смех17_улыбка" value="Да" required><span>Да</span></label><label class="option"><input type="radio" name="Смех17_улыбка" value="Нет"><span>Нет</span></label></div></div>
+      <div class="question"><div class="question-title">Как ты думаешь, ему/ей весело или он/она притворяется?</div><div class="options"><label class="option"><input type="radio" name="Смех17_искренность" value="Весело" required><span>Весело</span></label><label class="option"><input type="radio" name="Смех17_искренность" value="Притворяется"><span>Притворяется</span></label></div></div>
+      <div class="question"><div class="question-title">Кто и в какой ситуации смеётся?</div><textarea class="text-input" name="Смех17_ситуация" placeholder="Напиши, кто смеётся и в какой ситуации..."></textarea></div>
+      <div class="question"><div class="question-title">Хотел бы ты быть рядом с этим человеком?</div><div class="options"><label class="option"><input type="radio" name="Смех17_рядом" value="Да" required><span>Да</span></label><label class="option"><input type="radio" name="Смех17_рядом" value="Нет"><span>Нет</span></label></div></div>
+    </div>
+  </div>
+
+  <div class="laugh-block" id="laugh18">
+    <div class="laugh-header"><div class="laugh-number">18</div><h2>Смех 18</h2></div>
+    <div class="audio-section">
+      <div class="audio-label">🎧 Аудиозапись</div>
+      <audio controls><source src="laugh18.wav" type="audio/wav">Ваш браузер не поддерживает аудио.</audio>
+      <div class="audio-upload-hint">Файл: <b>laugh18.wav</b></div>
+    </div>
+    <div class="questions">
+      <div class="question"><div class="question-title">Какой этот смех?</div><div class="options"><label class="option"><input type="radio" name="Смех18_тип" value="Добрый" required><span>Добрый</span></label><label class="option"><input type="radio" name="Смех18_тип" value="Нейтральный"><span>Нейтральный</span></label><label class="option"><input type="radio" name="Смех18_тип" value="Злой"><span>Злой</span></label></div></div>
+      <div class="question"><div class="question-title">Как тебе этот смех?</div><div class="options"><label class="option"><input type="radio" name="Смех18_ощущение" value="Приятный" required><span>Приятный</span></label><label class="option"><input type="radio" name="Смех18_ощущение" value="Безразлично"><span>Безразлично</span></label><label class="option"><input type="radio" name="Смех18_ощущение" value="Неприятный"><span>Неприятный</span></label></div></div>
+      <div class="question"><div class="question-title">Хочется ли тебе улыбнуться или засмеяться вместе?</div><div class="options"><label class="option"><input type="radio" name="Смех18_улыбка" value="Да" required><span>Да</span></label><label class="option"><input type="radio" name="Смех18_улыбка" value="Нет"><span>Нет</span></label></div></div>
+      <div class="question"><div class="question-title">Как ты думаешь, ему/ей весело или он/она притворяется?</div><div class="options"><label class="option"><input type="radio" name="Смех18_искренность" value="Весело" required><span>Весело</span></label><label class="option"><input type="radio" name="Смех18_искренность" value="Притворяется"><span>Притворяется</span></label></div></div>
+      <div class="question"><div class="question-title">Кто и в какой ситуации смеётся?</div><textarea class="text-input" name="Смех18_ситуация" placeholder="Напиши, кто смеётся и в какой ситуации..."></textarea></div>
+      <div class="question"><div class="question-title">Хотел бы ты быть рядом с этим человеком?</div><div class="options"><label class="option"><input type="radio" name="Смех18_рядом" value="Да" required><span>Да</span></label><label class="option"><input type="radio" name="Смех18_рядом" value="Нет"><span>Нет</span></label></div></div>
+    </div>
+  </div>
+
+  <div class="laugh-block" id="laugh19">
+    <div class="laugh-header"><div class="laugh-number">19</div><h2>Смех 19</h2></div>
+    <div class="audio-section">
+      <div class="audio-label">🎧 Аудиозапись</div>
+      <audio controls><source src="laugh19.wav" type="audio/wav">Ваш браузер не поддерживает аудио.</audio>
+      <div class="audio-upload-hint">Файл: <b>laugh19.wav</b></div>
+    </div>
+    <div class="questions">
+      <div class="question"><div class="question-title">Какой этот смех?</div><div class="options"><label class="option"><input type="radio" name="Смех19_тип" value="Добрый" required><span>Добрый</span></label><label class="option"><input type="radio" name="Смех19_тип" value="Нейтральный"><span>Нейтральный</span></label><label class="option"><input type="radio" name="Смех19_тип" value="Злой"><span>Злой</span></label></div></div>
+      <div class="question"><div class="question-title">Как тебе этот смех?</div><div class="options"><label class="option"><input type="radio" name="Смех19_ощущение" value="Приятный" required><span>Приятный</span></label><label class="option"><input type="radio" name="Смех19_ощущение" value="Безразлично"><span>Безразлично</span></label><label class="option"><input type="radio" name="Смех19_ощущение" value="Неприятный"><span>Неприятный</span></label></div></div>
+      <div class="question"><div class="question-title">Хочется ли тебе улыбнуться или засмеяться вместе?</div><div class="options"><label class="option"><input type="radio" name="Смех19_улыбка" value="Да" required><span>Да</span></label><label class="option"><input type="radio" name="Смех19_улыбка" value="Нет"><span>Нет</span></label></div></div>
+      <div class="question"><div class="question-title">Как ты думаешь, ему/ей весело или он/она притворяется?</div><div class="options"><label class="option"><input type="radio" name="Смех19_искренность" value="Весело" required><span>Весело</span></label><label class="option"><input type="radio" name="Смех19_искренность" value="Притворяется"><span>Притворяется</span></label></div></div>
+      <div class="question"><div class="question-title">Кто и в какой ситуации смеётся?</div><textarea class="text-input" name="Смех19_ситуация" placeholder="Напиши, кто смеётся и в какой ситуации..."></textarea></div>
+      <div class="question"><div class="question-title">Хотел бы ты быть рядом с этим человеком?</div><div class="options"><label class="option"><input type="radio" name="Смех19_рядом" value="Да" required><span>Да</span></label><label class="option"><input type="radio" name="Смех19_рядом" value="Нет"><span>Нет</span></label></div></div>
+    </div>
+  </div>
+
+  <div class="laugh-block" id="laugh20">
+    <div class="laugh-header"><div class="laugh-number">20</div><h2>Смех 20</h2></div>
+    <div class="audio-section">
+      <div class="audio-label">🎧 Аудиозапись</div>
+      <audio controls><source src="laugh20.wav" type="audio/wav">Ваш браузер не поддерживает аудио.</audio>
+      <div class="audio-upload-hint">Файл: <b>laugh20.wav</b></div>
+    </div>
+    <div class="questions">
+      <div class="question"><div class="question-title">Какой этот смех?</div><div class="options"><label class="option"><input type="radio" name="Смех20_тип" value="Добрый" required><span>Добрый</span></label><label class="option"><input type="radio" name="Смех20_тип" value="Нейтральный"><span>Нейтральный</span></label><label class="option"><input type="radio" name="Смех20_тип" value="Злой"><span>Злой</span></label></div></div>
+      <div class="question"><div class="question-title">Как тебе этот смех?</div><div class="options"><label class="option"><input type="radio" name="Смех20_ощущение" value="Приятный" required><span>Приятный</span></label><label class="option"><input type="radio" name="Смех20_ощущение" value="Безразлично"><span>Безразлично</span></label><label class="option"><input type="radio" name="Смех20_ощущение" value="Неприятный"><span>Неприятный</span></label></div></div>
+      <div class="question"><div class="question-title">Хочется ли тебе улыбнуться или засмеяться вместе?</div><div class="options"><label class="option"><input type="radio" name="Смех20_улыбка" value="Да" required><span>Да</span></label><label class="option"><input type="radio" name="Смех20_улыбка" value="Нет"><span>Нет</span></label></div></div>
+      <div class="question"><div class="question-title">Как ты думаешь, ему/ей весело или он/она притворяется?</div><div class="options"><label class="option"><input type="radio" name="Смех20_искренность" value="Весело" required><span>Весело</span></label><label class="option"><input type="radio" name="Смех20_искренность" value="Притворяется"><span>Притворяется</span></label></div></div>
+      <div class="question"><div class="question-title">Кто и в какой ситуации смеётся?</div><textarea class="text-input" name="Смех20_ситуация" placeholder="Напиши, кто смеётся и в какой ситуации..."></textarea></div>
+      <div class="question"><div class="question-title">Хотел бы ты быть рядом с этим человеком?</div><div class="options"><label class="option"><input type="radio" name="Смех20_рядом" value="Да" required><span>Да</span></label><label class="option"><input type="radio" name="Смех20_рядом" value="Нет"><span>Нет</span></label></div></div>
+    </div>
+  </div>
+
+  <div class="laugh-block" id="laugh21">
+    <div class="laugh-header"><div class="laugh-number">21</div><h2>Смех 21</h2></div>
+    <div class="audio-section">
+      <div class="audio-label">🎧 Аудиозапись</div>
+      <audio controls><source src="laugh21.wav" type="audio/wav">Ваш браузер не поддерживает аудио.</audio>
+      <div class="audio-upload-hint">Файл: <b>laugh21.wav</b></div>
+    </div>
+    <div class="questions">
+      <div class="question"><div class="question-title">Какой этот смех?</div><div class="options"><label class="option"><input type="radio" name="Смех21_тип" value="Добрый" required><span>Добрый</span></label><label class="option"><input type="radio" name="Смех21_тип" value="Нейтральный"><span>Нейтральный</span></label><label class="option"><input type="radio" name="Смех21_тип" value="Злой"><span>Злой</span></label></div></div>
+      <div class="question"><div class="question-title">Как тебе этот смех?</div><div class="options"><label class="option"><input type="radio" name="Смех21_ощущение" value="Приятный" required><span>Приятный</span></label><label class="option"><input type="radio" name="Смех21_ощущение" value="Безразлично"><span>Безразлично</span></label><label class="option"><input type="radio" name="Смех21_ощущение" value="Неприятный"><span>Неприятный</span></label></div></div>
+      <div class="question"><div class="question-title">Хочется ли тебе улыбнуться или засмеяться вместе?</div><div class="options"><label class="option"><input type="radio" name="Смех21_улыбка" value="Да" required><span>Да</span></label><label class="option"><input type="radio" name="Смех21_улыбка" value="Нет"><span>Нет</span></label></div></div>
+      <div class="question"><div class="question-title">Как ты думаешь, ему/ей весело или он/она притворяется?</div><div class="options"><label class="option"><input type="radio" name="Смех21_искренность" value="Весело" required><span>Весело</span></label><label class="option"><input type="radio" name="Смех21_искренность" value="Притворяется"><span>Притворяется</span></label></div></div>
+      <div class="question"><div class="question-title">Кто и в какой ситуации смеётся?</div><textarea class="text-input" name="Смех21_ситуация" placeholder="Напиши, кто смеётся и в какой ситуации..."></textarea></div>
+      <div class="question"><div class="question-title">Хотел бы ты быть рядом с этим человеком?</div><div class="options"><label class="option"><input type="radio" name="Смех21_рядом" value="Да" required><span>Да</span></label><label class="option"><input type="radio" name="Смех21_рядом" value="Нет"><span>Нет</span></label></div></div>
+    </div>
+  </div>
+
+  <div class="laugh-block" id="laugh22">
+    <div class="laugh-header"><div class="laugh-number">22</div><h2>Смех 22</h2></div>
+    <div class="audio-section">
+      <div class="audio-label">🎧 Аудиозапись</div>
+      <audio controls><source src="laugh22.wav" type="audio/wav">Ваш браузер не поддерживает аудио.</audio>
+      <div class="audio-upload-hint">Файл: <b>laugh22.wav</b></div>
+    </div>
+    <div class="questions">
+      <div class="question"><div class="question-title">Какой этот смех?</div><div class="options"><label class="option"><input type="radio" name="Смех22_тип" value="Добрый" required><span>Добрый</span></label><label class="option"><input type="radio" name="Смех22_тип" value="Нейтральный"><span>Нейтральный</span></label><label class="option"><input type="radio" name="Смех22_тип" value="Злой"><span>Злой</span></label></div></div>
+      <div class="question"><div class="question-title">Как тебе этот смех?</div><div class="options"><label class="option"><input type="radio" name="Смех22_ощущение" value="Приятный" required><span>Приятный</span></label><label class="option"><input type="radio" name="Смех22_ощущение" value="Безразлично"><span>Безразлично</span></label><label class="option"><input type="radio" name="Смех22_ощущение" value="Неприятный"><span>Неприятный</span></label></div></div>
+      <div class="question"><div class="question-title">Хочется ли тебе улыбнуться или засмеяться вместе?</div><div class="options"><label class="option"><input type="radio" name="Смех22_улыбка" value="Да" required><span>Да</span></label><label class="option"><input type="radio" name="Смех22_улыбка" value="Нет"><span>Нет</span></label></div></div>
+      <div class="question"><div class="question-title">Как ты думаешь, ему/ей весело или он/она притворяется?</div><div class="options"><label class="option"><input type="radio" name="Смех22_искренность" value="Весело" required><span>Весело</span></label><label class="option"><input type="radio" name="Смех22_искренность" value="Притворяется"><span>Притворяется</span></label></div></div>
+      <div class="question"><div class="question-title">Кто и в какой ситуации смеётся?</div><textarea class="text-input" name="Смех22_ситуация" placeholder="Напиши, кто смеётся и в какой ситуации..."></textarea></div>
+      <div class="question"><div class="question-title">Хотел бы ты быть рядом с этим человеком?</div><div class="options"><label class="option"><input type="radio" name="Смех22_рядом" value="Да" required><span>Да</span></label><label class="option"><input type="radio" name="Смех22_рядом" value="Нет"><span>Нет</span></label></div></div>
+    </div>
+  </div>
+
+  <div class="laugh-block" id="laugh23">
+    <div class="laugh-header"><div class="laugh-number">23</div><h2>Смех 23</h2></div>
+    <div class="audio-section">
+      <div class="audio-label">🎧 Аудиозапись</div>
+      <audio controls><source src="laugh23.mp3" type="audio/mpeg">Ваш браузер не поддерживает аудио.</audio>
+      <div class="audio-upload-hint">Файл: <b>laugh23.mp3</b></div>
+    </div>
+    <div class="questions">
+      <div class="question"><div class="question-title">Какой этот смех?</div><div class="options"><label class="option"><input type="radio" name="Смех23_тип" value="Добрый" required><span>Добрый</span></label><label class="option"><input type="radio" name="Смех23_тип" value="Нейтральный"><span>Нейтральный</span></label><label class="option"><input type="radio" name="Смех23_тип" value="Злой"><span>Злой</span></label></div></div>
+      <div class="question"><div class="question-title">Как тебе этот смех?</div><div class="options"><label class="option"><input type="radio" name="Смех23_ощущение" value="Приятный" required><span>Приятный</span></label><label class="option"><input type="radio" name="Смех23_ощущение" value="Безразлично"><span>Безразлично</span></label><label class="option"><input type="radio" name="Смех23_ощущение" value="Неприятный"><span>Неприятный</span></label></div></div>
+      <div class="question"><div class="question-title">Хочется ли тебе улыбнуться или засмеяться вместе?</div><div class="options"><label class="option"><input type="radio" name="Смех23_улыбка" value="Да" required><span>Да</span></label><label class="option"><input type="radio" name="Смех23_улыбка" value="Нет"><span>Нет</span></label></div></div>
+      <div class="question"><div class="question-title">Как ты думаешь, ему/ей весело или он/она притворяется?</div><div class="options"><label class="option"><input type="radio" name="Смех23_искренность" value="Весело" required><span>Весело</span></label><label class="option"><input type="radio" name="Смех23_искренность" value="Притворяется"><span>Притворяется</span></label></div></div>
+      <div class="question"><div class="question-title">Кто и в какой ситуации смеётся?</div><textarea class="text-input" name="Смех23_ситуация" placeholder="Напиши, кто смеётся и в какой ситуации..."></textarea></div>
+      <div class="question"><div class="question-title">Хотел бы ты быть рядом с этим человеком?</div><div class="options"><label class="option"><input type="radio" name="Смех23_рядом" value="Да" required><span>Да</span></label><label class="option"><input type="radio" name="Смех23_рядом" value="Нет"><span>Нет</span></label></div></div>
+    </div>
+  </div>
+
+  <div class="laugh-block" id="laugh24">
+    <div class="laugh-header"><div class="laugh-number">24</div><h2>Смех 24</h2></div>
+    <div class="audio-section">
+      <div class="audio-label">🎧 Аудиозапись</div>
+      <audio controls><source src="laugh24.mp3" type="audio/mpeg">Ваш браузер не поддерживает аудио.</audio>
+      <div class="audio-upload-hint">Файл: <b>laugh24.mp3</b></div>
+    </div>
+    <div class="questions">
+      <div class="question"><div class="question-title">Какой этот смех?</div><div class="options"><label class="option"><input type="radio" name="Смех24_тип" value="Добрый" required><span>Добрый</span></label><label class="option"><input type="radio" name="Смех24_тип" value="Нейтральный"><span>Нейтральный</span></label><label class="option"><input type="radio" name="Смех24_тип" value="Злой"><span>Злой</span></label></div></div>
+      <div class="question"><div class="question-title">Как тебе этот смех?</div><div class="options"><label class="option"><input type="radio" name="Смех24_ощущение" value="Приятный" required><span>Приятный</span></label><label class="option"><input type="radio" name="Смех24_ощущение" value="Безразлично"><span>Безразлично</span></label><label class="option"><input type="radio" name="Смех24_ощущение" value="Неприятный"><span>Неприятный</span></label></div></div>
+      <div class="question"><div class="question-title">Хочется ли тебе улыбнуться или засмеяться вместе?</div><div class="options"><label class="option"><input type="radio" name="Смех24_улыбка" value="Да" required><span>Да</span></label><label class="option"><input type="radio" name="Смех24_улыбка" value="Нет"><span>Нет</span></label></div></div>
+      <div class="question"><div class="question-title">Как ты думаешь, ему/ей весело или он/она притворяется?</div><div class="options"><label class="option"><input type="radio" name="Смех24_искренность" value="Весело" required><span>Весело</span></label><label class="option"><input type="radio" name="Смех24_искренность" value="Притворяется"><span>Притворяется</span></label></div></div>
+      <div class="question"><div class="question-title">Кто и в какой ситуации смеётся?</div><textarea class="text-input" name="Смех24_ситуация" placeholder="Напиши, кто смеётся и в какой ситуации..."></textarea></div>
+      <div class="question"><div class="question-title">Хотел бы ты быть рядом с этим человеком?</div><div class="options"><label class="option"><input type="radio" name="Смех24_рядом" value="Да" required><span>Да</span></label><label class="option"><input type="radio" name="Смех24_рядом" value="Нет"><span>Нет</span></label></div></div>
+    </div>
+  </div>
+
+  <div class="laugh-block" id="laugh25">
+    <div class="laugh-header"><div class="laugh-number">25</div><h2>Смех 25</h2></div>
+    <div class="audio-section">
+      <div class="audio-label">🎧 Аудиозапись</div>
+      <audio controls><source src="laugh25.mp3" type="audio/mpeg">Ваш браузер не поддерживает аудио.</audio>
+      <div class="audio-upload-hint">Файл: <b>laugh25.mp3</b></div>
+    </div>
+    <div class="questions">
+      <div class="question"><div class="question-title">Какой этот смех?</div><div class="options"><label class="option"><input type="radio" name="Смех25_тип" value="Добрый" required><span>Добрый</span></label><label class="option"><input type="radio" name="Смех25_тип" value="Нейтральный"><span>Нейтральный</span></label><label class="option"><input type="radio" name="Смех25_тип" value="Злой"><span>Злой</span></label></div></div>
+      <div class="question"><div class="question-title">Как тебе этот смех?</div><div class="options"><label class="option"><input type="radio" name="Смех25_ощущение" value="Приятный" required><span>Приятный</span></label><label class="option"><input type="radio" name="Смех25_ощущение" value="Безразлично"><span>Безразлично</span></label><label class="option"><input type="radio" name="Смех25_ощущение" value="Неприятный"><span>Неприятный</span></label></div></div>
+      <div class="question"><div class="question-title">Хочется ли тебе улыбнуться или засмеяться вместе?</div><div class="options"><label class="option"><input type="radio" name="Смех25_улыбка" value="Да" required><span>Да</span></label><label class="option"><input type="radio" name="Смех25_улыбка" value="Нет"><span>Нет</span></label></div></div>
+      <div class="question"><div class="question-title">Как ты думаешь, ему/ей весело или он/она притворяется?</div><div class="options"><label class="option"><input type="radio" name="Смех25_искренность" value="Весело" required><span>Весело</span></label><label class="option"><input type="radio" name="Смех25_искренность" value="Притворяется"><span>Притворяется</span></label></div></div>
+      <div class="question"><div class="question-title">Кто и в какой ситуации смеётся?</div><textarea class="text-input" name="Смех25_ситуация" placeholder="Напиши, кто смеётся и в какой ситуации..."></textarea></div>
+      <div class="question"><div class="question-title">Хотел бы ты быть рядом с этим человеком?</div><div class="options"><label class="option"><input type="radio" name="Смех25_рядом" value="Да" required><span>Да</span></label><label class="option"><input type="radio" name="Смех25_рядом" value="Нет"><span>Нет</span></label></div></div>
+    </div>
+  </div>
+
+  <div class="laugh-block" id="laugh26">
+    <div class="laugh-header"><div class="laugh-number">26</div><h2>Смех 26</h2></div>
+    <div class="audio-section">
+      <div class="audio-label">🎧 Аудиозапись</div>
+      <audio controls><source src="laugh26.mp3" type="audio/mpeg">Ваш браузер не поддерживает аудио.</audio>
+      <div class="audio-upload-hint">Файл: <b>laugh26.mp3</b></div>
+    </div>
+    <div class="questions">
+      <div class="question"><div class="question-title">Какой этот смех?</div><div class="options"><label class="option"><input type="radio" name="Смех26_тип" value="Добрый" required><span>Добрый</span></label><label class="option"><input type="radio" name="Смех26_тип" value="Нейтральный"><span>Нейтральный</span></label><label class="option"><input type="radio" name="Смех26_тип" value="Злой"><span>Злой</span></label></div></div>
+      <div class="question"><div class="question-title">Как тебе этот смех?</div><div class="options"><label class="option"><input type="radio" name="Смех26_ощущение" value="Приятный" required><span>Приятный</span></label><label class="option"><input type="radio" name="Смех26_ощущение" value="Безразлично"><span>Безразлично</span></label><label class="option"><input type="radio" name="Смех26_ощущение" value="Неприятный"><span>Неприятный</span></label></div></div>
+      <div class="question"><div class="question-title">Хочется ли тебе улыбнуться или засмеяться вместе?</div><div class="options"><label class="option"><input type="radio" name="Смех26_улыбка" value="Да" required><span>Да</span></label><label class="option"><input type="radio" name="Смех26_улыбка" value="Нет"><span>Нет</span></label></div></div>
+      <div class="question"><div class="question-title">Как ты думаешь, ему/ей весело или он/она притворяется?</div><div class="options"><label class="option"><input type="radio" name="Смех26_искренность" value="Весело" required><span>Весело</span></label><label class="option"><input type="radio" name="Смех26_искренность" value="Притворяется"><span>Притворяется</span></label></div></div>
+      <div class="question"><div class="question-title">Кто и в какой ситуации смеётся?</div><textarea class="text-input" name="Смех26_ситуация" placeholder="Напиши, кто смеётся и в какой ситуации..."></textarea></div>
+      <div class="question"><div class="question-title">Хотел бы ты быть рядом с этим человеком?</div><div class="options"><label class="option"><input type="radio" name="Смех26_рядом" value="Да" required><span>Да</span></label><label class="option"><input type="radio" name="Смех26_рядом" value="Нет"><span>Нет</span></label></div></div>
+    </div>
+  </div>
+
+  <div class="laugh-block" id="laugh27">
+    <div class="laugh-header"><div class="laugh-number">27</div><h2>Смех 27</h2></div>
+    <div class="audio-section">
+      <div class="audio-label">🎧 Аудиозапись</div>
+      <audio controls><source src="laugh27.mp3" type="audio/mpeg">Ваш браузер не поддерживает аудио.</audio>
+      <div class="audio-upload-hint">Файл: <b>laugh27.mp3</b></div>
+    </div>
+    <div class="questions">
+      <div class="question"><div class="question-title">Какой этот смех?</div><div class="options"><label class="option"><input type="radio" name="Смех27_тип" value="Добрый" required><span>Добрый</span></label><label class="option"><input type="radio" name="Смех27_тип" value="Нейтральный"><span>Нейтральный</span></label><label class="option"><input type="radio" name="Смех27_тип" value="Злой"><span>Злой</span></label></div></div>
+      <div class="question"><div class="question-title">Как тебе этот смех?</div><div class="options"><label class="option"><input type="radio" name="Смех27_ощущение" value="Приятный" required><span>Приятный</span></label><label class="option"><input type="radio" name="Смех27_ощущение" value="Безразлично"><span>Безразлично</span></label><label class="option"><input type="radio" name="Смех27_ощущение" value="Неприятный"><span>Неприятный</span></label></div></div>
+      <div class="question"><div class="question-title">Хочется ли тебе улыбнуться или засмеяться вместе?</div><div class="options"><label class="option"><input type="radio" name="Смех27_улыбка" value="Да" required><span>Да</span></label><label class="option"><input type="radio" name="Смех27_улыбка" value="Нет"><span>Нет</span></label></div></div>
+      <div class="question"><div class="question-title">Как ты думаешь, ему/ей весело или он/она притворяется?</div><div class="options"><label class="option"><input type="radio" name="Смех27_искренность" value="Весело" required><span>Весело</span></label><label class="option"><input type="radio" name="Смех27_искренность" value="Притворяется"><span>Притворяется</span></label></div></div>
+      <div class="question"><div class="question-title">Кто и в какой ситуации смеётся?</div><textarea class="text-input" name="Смех27_ситуация" placeholder="Напиши, кто смеётся и в какой ситуации..."></textarea></div>
+      <div class="question"><div class="question-title">Хотел бы ты быть рядом с этим человеком?</div><div class="options"><label class="option"><input type="radio" name="Смех27_рядом" value="Да" required><span>Да</span></label><label class="option"><input type="radio" name="Смех27_рядом" value="Нет"><span>Нет</span></label></div></div>
+    </div>
+  </div>
+
+  <div class="laugh-block" id="laugh28">
+    <div class="laugh-header"><div class="laugh-number">28</div><h2>Смех 28</h2></div>
+    <div class="audio-section">
+      <div class="audio-label">🎧 Аудиозапись</div>
+      <audio controls><source src="laugh28.mp3" type="audio/mpeg">Ваш браузер не поддерживает аудио.</audio>
+      <div class="audio-upload-hint">Файл: <b>laugh28.mp3</b></div>
+    </div>
+    <div class="questions">
+      <div class="question"><div class="question-title">Какой этот смех?</div><div class="options"><label class="option"><input type="radio" name="Смех28_тип" value="Добрый" required><span>Добрый</span></label><label class="option"><input type="radio" name="Смех28_тип" value="Нейтральный"><span>Нейтральный</span></label><label class="option"><input type="radio" name="Смех28_тип" value="Злой"><span>Злой</span></label></div></div>
+      <div class="question"><div class="question-title">Как тебе этот смех?</div><div class="options"><label class="option"><input type="radio" name="Смех28_ощущение" value="Приятный" required><span>Приятный</span></label><label class="option"><input type="radio" name="Смех28_ощущение" value="Безразлично"><span>Безразлично</span></label><label class="option"><input type="radio" name="Смех28_ощущение" value="Неприятный"><span>Неприятный</span></label></div></div>
+      <div class="question"><div class="question-title">Хочется ли тебе улыбнуться или засмеяться вместе?</div><div class="options"><label class="option"><input type="radio" name="Смех28_улыбка" value="Да" required><span>Да</span></label><label class="option"><input type="radio" name="Смех28_улыбка" value="Нет"><span>Нет</span></label></div></div>
+      <div class="question"><div class="question-title">Как ты думаешь, ему/ей весело или он/она притворяется?</div><div class="options"><label class="option"><input type="radio" name="Смех28_искренность" value="Весело" required><span>Весело</span></label><label class="option"><input type="radio" name="Смех28_искренность" value="Притворяется"><span>Притворяется</span></label></div></div>
+      <div class="question"><div class="question-title">Кто и в какой ситуации смеётся?</div><textarea class="text-input" name="Смех28_ситуация" placeholder="Напиши, кто смеётся и в какой ситуации..."></textarea></div>
+      <div class="question"><div class="question-title">Хотел бы ты быть рядом с этим человеком?</div><div class="options"><label class="option"><input type="radio" name="Смех28_рядом" value="Да" required><span>Да</span></label><label class="option"><input type="radio" name="Смех28_рядом" value="Нет"><span>Нет</span></label></div></div>
+    </div>
+  </div>
+
+  <div class="laugh-block" id="laugh29">
+    <div class="laugh-header"><div class="laugh-number">29</div><h2>Смех 29</h2></div>
+    <div class="audio-section">
+      <div class="audio-label">🎧 Аудиозапись</div>
+      <audio controls><source src="laugh29.mp3" type="audio/mpeg">Ваш браузер не поддерживает аудио.</audio>
+      <div class="audio-upload-hint">Файл: <b>laugh29.mp3</b></div>
+    </div>
+    <div class="questions">
+      <div class="question"><div class="question-title">Какой этот смех?</div><div class="options"><label class="option"><input type="radio" name="Смех29_тип" value="Добрый" required><span>Добрый</span></label><label class="option"><input type="radio" name="Смех29_тип" value="Нейтральный"><span>Нейтральный</span></label><label class="option"><input type="radio" name="Смех29_тип" value="Злой"><span>Злой</span></label></div></div>
+      <div class="question"><div class="question-title">Как тебе этот смех?</div><div class="options"><label class="option"><input type="radio" name="Смех29_ощущение" value="Приятный" required><span>Приятный</span></label><label class="option"><input type="radio" name="Смех29_ощущение" value="Безразлично"><span>Безразлично</span></label><label class="option"><input type="radio" name="Смех29_ощущение" value="Неприятный"><span>Неприятный</span></label></div></div>
+      <div class="question"><div class="question-title">Хочется ли тебе улыбнуться или засмеяться вместе?</div><div class="options"><label class="option"><input type="radio" name="Смех29_улыбка" value="Да" required><span>Да</span></label><label class="option"><input type="radio" name="Смех29_улыбка" value="Нет"><span>Нет</span></label></div></div>
+      <div class="question"><div class="question-title">Как ты думаешь, ему/ей весело или он/она притворяется?</div><div class="options"><label class="option"><input type="radio" name="Смех29_искренность" value="Весело" required><span>Весело</span></label><label class="option"><input type="radio" name="Смех29_искренность" value="Притворяется"><span>Притворяется</span></label></div></div>
+      <div class="question"><div class="question-title">Кто и в какой ситуации смеётся?</div><textarea class="text-input" name="Смех29_ситуация" placeholder="Напиши, кто смеётся и в какой ситуации..."></textarea></div>
+      <div class="question"><div class="question-title">Хотел бы ты быть рядом с этим человеком?</div><div class="options"><label class="option"><input type="radio" name="Смех29_рядом" value="Да" required><span>Да</span></label><label class="option"><input type="radio" name="Смех29_рядом" value="Нет"><span>Нет</span></label></div></div>
+    </div>
+  </div>
+
+  <div class="laugh-block" id="laugh30">
+    <div class="laugh-header"><div class="laugh-number">30</div><h2>Смех 30</h2></div>
+    <div class="audio-section">
+      <div class="audio-label">🎧 Аудиозапись</div>
+      <audio controls><source src="laugh30.mp3" type="audio/mpeg">Ваш браузер не поддерживает аудио.</audio>
+      <div class="audio-upload-hint">Файл: <b>laugh30.mp3</b></div>
+    </div>
+    <div class="questions">
+      <div class="question"><div class="question-title">Какой этот смех?</div><div class="options"><label class="option"><input type="radio" name="Смех30_тип" value="Добрый" required><span>Добрый</span></label><label class="option"><input type="radio" name="Смех30_тип" value="Нейтральный"><span>Нейтральный</span></label><label class="option"><input type="radio" name="Смех30_тип" value="Злой"><span>Злой</span></label></div></div>
+      <div class="question"><div class="question-title">Как тебе этот смех?</div><div class="options"><label class="option"><input type="radio" name="Смех30_ощущение" value="Приятный" required><span>Приятный</span></label><label class="option"><input type="radio" name="Смех30_ощущение" value="Безразлично"><span>Безразлично</span></label><label class="option"><input type="radio" name="Смех30_ощущение" value="Неприятный"><span>Неприятный</span></label></div></div>
+      <div class="question"><div class="question-title">Хочется ли тебе улыбнуться или засмеяться вместе?</div><div class="options"><label class="option"><input type="radio" name="Смех30_улыбка" value="Да" required><span>Да</span></label><label class="option"><input type="radio" name="Смех30_улыбка" value="Нет"><span>Нет</span></label></div></div>
+      <div class="question"><div class="question-title">Как ты думаешь, ему/ей весело или он/она притворяется?</div><div class="options"><label class="option"><input type="radio" name="Смех30_искренность" value="Весело" required><span>Весело</span></label><label class="option"><input type="radio" name="Смех30_искренность" value="Притворяется"><span>Притворяется</span></label></div></div>
+      <div class="question"><div class="question-title">Кто и в какой ситуации смеётся?</div><textarea class="text-input" name="Смех30_ситуация" placeholder="Напиши, кто смеётся и в какой ситуации..."></textarea></div>
+      <div class="question"><div class="question-title">Хотел бы ты быть рядом с этим человеком?</div><div class="options"><label class="option"><input type="radio" name="Смех30_рядом" value="Да" required><span>Да</span></label><label class="option"><input type="radio" name="Смех30_рядом" value="Нет"><span>Нет</span></label></div></div>
+    </div>
+  </div>
+
+  
+    <button type="submit" class="submit-btn" id="submitBtn">✓ Отправить ответы</button>
+    <div class="error-msg" id="errorMsg">❌ Ошибка отправки. Проверьте соединение с интернетом.</div>
+  </form>
+
+  <div class="success-msg" id="successMsg">
+    <div style="font-size:3rem;margin-bottom:1rem">✅</div>
+    <h2>Спасибо!</h2>
+    <p>Ответы сохранены в таблицу исследователя.</p>
+    <p style="font-size:.85rem">Можно скачать копию себе:</p>
+    <button class="download-btn" onclick="downloadCSV()">⬇ Скачать копию (CSV)</button>
+  </div>
+</div>
+
+<script>
+const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxkPum4RPFJpmXGloapThD4aF3xcHsYZkoA2wDf09TYgoDs4lEJuE-q5BC_4BuhfW8n/exec';
+
+let savedData = {};
+
+function updateProgress() {
+  let filled = 0;
+  for (let n = 1; n <= 30; n++) {
+    if (document.querySelector(`input[name="Смех${n}_тип"]:checked`)) filled++;
+  }
+  document.getElementById('progressFill').style.width = (filled/30*100) + '%';
+  document.getElementById('progressLabel').textContent = filled + ' из 30 блоков заполнено';
+}
+document.getElementById('survey').addEventListener('change', updateProgress);
+
+async function submitForm(e) {
+  e.preventDefault();
+  const btn = document.getElementById('submitBtn');
+  const errMsg = document.getElementById('errorMsg');
+  btn.disabled = true;
+  btn.textContent = '⏳ Сохранение...';
+  errMsg.style.display = 'none';
+
+  const formData = new FormData(e.target);
+  savedData = {};
+  for (let [key, val] of formData.entries()) {
+    if (savedData[key]) {
+      savedData[key] = [].concat(savedData[key], val);
+    } else {
+      savedData[key] = val;
+    }
+  }
+  for (let k in savedData) {
+    if (Array.isArray(savedData[k])) savedData[k] = savedData[k].join('; ');
+  }
+  savedData['Дата'] = new Date().toLocaleString('ru');
+
+  try {
+    await fetch(SCRIPT_URL, {
+      method: 'POST',
+      mode: 'no-cors',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify(savedData)
+    });
+    document.getElementById('survey').style.display = 'none';
+    document.getElementById('successMsg').style.display = 'block';
+    window.scrollTo({top:0, behavior:'smooth'});
+  } catch(err) {
+    errMsg.style.display = 'block';
+    btn.disabled = false;
+    btn.textContent = '✓ Отправить ответы';
+  }
+}
+
+function downloadCSV() {
+  const keys = Object.keys(savedData);
+  const vals = keys.map(k => '"' + String(savedData[k]).replace(/"/g,'""') + '"');
+  const csv = '\uFEFF' + keys.map(k=>'"'+k+'"').join(',') + '\n' + vals.join(',');
+  const blob = new Blob([csv], {type:'text/csv;charset=utf-8;'});
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = `смех_${savedData['Имя']||'ответ'}_${new Date().toLocaleDateString('ru')}.csv`;
+  a.click();
+}
+</script>
+</body>
+</html>
