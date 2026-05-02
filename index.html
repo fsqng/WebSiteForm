@@ -1,1 +1,276 @@
-placeholder_will_be_replaced
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Исследование смеха</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #f5f5f5; color: #333; }
+.container { max-width: 800px; margin: 0 auto; padding: 20px; }
+header { background: #2c3e50; color: white; padding: 20px; border-radius: 8px 8px 0 0; margin-bottom: 0; }
+header h1 { font-size: 1.4em; }
+.progress-bar-wrap { background: #ecf0f1; padding: 12px 20px; border-left: 1px solid #ddd; border-right: 1px solid #ddd; }
+.progress-bar { background: #bdc3c7; border-radius: 4px; height: 8px; }
+.progress-fill { background: #27ae60; height: 8px; border-radius: 4px; width: 0; transition: width 0.3s; }
+.progress-label { font-size: 0.85em; color: #666; margin-top: 4px; }
+.participant-block { background: white; padding: 20px; border-left: 1px solid #ddd; border-right: 1px solid #ddd; }
+.participant-block h2 { font-size: 1em; margin-bottom: 16px; color: #2c3e50; }
+.field-row { margin-bottom: 14px; }
+.field-row label { display: block; font-size: 0.85em; font-weight: 600; margin-bottom: 4px; color: #555; }
+.field-row input[type="text"], .field-row select { width: 100%; padding: 8px 10px; border: 1px solid #ccc; border-radius: 4px; font-size: 0.95em; }
+.tabs { display: flex; flex-wrap: wrap; gap: 4px; background: #ecf0f1; padding: 10px; border-left: 1px solid #ddd; border-right: 1px solid #ddd; }
+.tab-btn { padding: 5px 10px; border: 1px solid #bbb; border-radius: 4px; background: white; font-size: 0.8em; cursor: pointer; }
+.tab-btn.answered { background: #27ae60; color: white; border-color: #27ae60; }
+.tab-btn.active { outline: 2px solid #2c3e50; }
+.laugh-block { background: white; border: 1px solid #ddd; border-radius: 0 0 8px 8px; padding: 20px; display: none; }
+.laugh-block.active { display: block; }
+.laugh-block h2 { font-size: 1em; color: #2c3e50; margin-bottom: 16px; border-bottom: 1px solid #eee; padding-bottom: 8px; }
+.audio-wrap { background: #f9f9f9; border: 1px solid #eee; border-radius: 6px; padding: 12px; margin-bottom: 16px; }
+.audio-wrap audio { width: 100%; margin-top: 6px; }
+.audio-label { font-size: 0.8em; color: #888; }
+.question { margin-bottom: 16px; }
+.question p { font-size: 0.9em; font-weight: 600; color: #444; margin-bottom: 8px; }
+.radio-group { display: flex; flex-wrap: wrap; gap: 6px; }
+.radio-label { display: flex; align-items: center; gap: 5px; cursor: pointer; font-size: 0.875em; background: #f7f7f7; border: 1px solid #ddd; border-radius: 4px; padding: 5px 10px; }
+.radio-label input { margin: 0; }
+.radio-label:has(input:checked) { background: #e8f4fd; border-color: #3498db; color: #1a6fa8; }
+.textarea-wrap textarea { width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 4px; font-size: 0.875em; resize: vertical; min-height: 70px; }
+.nav-btns { display: flex; justify-content: space-between; margin-top: 20px; gap: 8px; }
+.btn { padding: 9px 18px; border: none; border-radius: 4px; cursor: pointer; font-size: 0.875em; }
+.btn-prev { background: #ecf0f1; color: #555; }
+.btn-next { background: #3498db; color: white; }
+.btn-submit { background: #27ae60; color: white; font-weight: 600; font-size: 1em; width: 100%; padding: 14px; border-radius: 6px; border: none; cursor: pointer; margin-top: 24px; }
+.btn-submit:disabled { background: #95a5a6; cursor: not-allowed; }
+.error-msg { background: #fdecea; border: 1px solid #e74c3c; color: #c0392b; padding: 12px; border-radius: 4px; margin-top: 12px; display: none; font-size: 0.875em; }
+.success-block { display: none; background: white; border-radius: 8px; padding: 40px; text-align: center; }
+.success-block h2 { color: #27ae60; font-size: 1.4em; margin-bottom: 12px; }
+.success-block p { color: #666; margin-bottom: 20px; }
+.btn-download { background: #3498db; color: white; border: none; padding: 10px 20px; border-radius: 4px; cursor: pointer; font-size: 0.9em; }
+@media (max-width: 600px) { .radio-group { flex-direction: column; } }
+</style>
+</head>
+<body>
+<div class="container">
+
+<div id="successMsg" class="success-block">
+  <h2>Спасибо!</h2>
+  <p>Ответы сохранены в таблицу исследователя.</p>
+  <p>Можно скачать копию себе:</p>
+  <button class="btn-download" onclick="downloadCSV()">⬇ Скачать копию (CSV)</button>
+</div>
+
+<form id="survey" action="#" method="post" onsubmit="return false;">
+  <header><h1>🎧 Исследование восприятия смеха</h1></header>
+
+  <div class="progress-bar-wrap">
+    <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+    <div class="progress-label" id="progressLabel">0 из 30 блоков заполнено</div>
+  </div>
+
+  <div class="participant-block">
+    <h2>👤 Данные участника</h2>
+    <div class="field-row"><label>Имя ребёнка *</label><input type="text" name="Имя" required placeholder="Введите имя"></div>
+    <div class="field-row"><label>Возраст *</label><input type="text" name="Возраст" required placeholder="Полных лет"></div>
+    <div class="field-row"><label>Пол *</label>
+      <select name="Пол" required>
+        <option value="">— выбери —</option>
+        <option>Мальчик</option>
+        <option>Девочка</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="tabs" id="tabsContainer"></div>
+
+  <div id="blocksContainer"></div>
+
+  <div id="errorMsg" class="error-msg"></div>
+  <button type="button" id="submitBtn" class="btn-submit" onclick="submitForm(event)">✓ Отправить ответы</button>
+
+</form>
+</div>
+
+<script>
+const TOTAL = 30;
+const QUESTIONS = [
+  { key: 'тип',     label: 'Какой этот смех?',                          type: 'radio',    opts: ['Добрый','Нейтральный','Злой'] },
+  { key: 'ощуще',   label: 'Как тебе этот смех?',                       type: 'radio',    opts: ['Приятный','Безразлично','Неприятный'] },
+  { key: 'улыбка',  label: 'Хочется ли тебе улыбнуться или засмеяться вместе?', type: 'radio', opts: ['Да','Нет'] },
+  { key: 'искрен',  label: 'Как ты думаешь, ему/ей весело или он/она притворяется?', type: 'radio', opts: ['Весело','Притворяется'] },
+  { key: 'ситуац',  label: 'Кто и в какой ситуации смеётся?',           type: 'textarea' },
+  { key: 'рядом',   label: 'Хотел бы ты быть рядом с этим человеком?', type: 'radio',    opts: ['Да','Нет'] },
+];
+
+function buildBlocks() {
+  const tabs = document.getElementById('tabsContainer');
+  const cont = document.getElementById('blocksContainer');
+  for (let i = 1; i <= TOTAL; i++) {
+    const btn = document.createElement('button');
+    btn.type = 'button';
+    btn.className = 'tab-btn';
+    btn.id = 'tab' + i;
+    btn.textContent = i;
+    btn.onclick = () => showBlock(i);
+    tabs.appendChild(btn);
+
+    const block = document.createElement('div');
+    block.className = 'laugh-block' + (i === 1 ? ' active' : '');
+    block.id = 'block' + i;
+
+    let html = '<h2>Смех ' + i + '</h2>';
+    html += '<div class="audio-wrap">';
+    html += '<span class="audio-label">🎧 Аудиозапись</span>';
+    html += '<audio controls preload="none"><source src="laugh' + i + '.mp3" type="audio/mpeg">Ваш браузер не поддерживает аудио.</audio>';
+    html += '</div>';
+
+    for (const q of QUESTIONS) {
+      const fname = 'Смех' + i + '_' + q.key;
+      html += '<div class="question">';
+      html += '<p>' + q.label + '</p>';
+      if (q.type === 'radio') {
+        html += '<div class="radio-group">';
+        for (const opt of q.opts) {
+          html += '<label class="radio-label"><input type="radio" name="' + fname + '" value="' + opt + '"> ' + opt + '</label>';
+        }
+        html += '</div>';
+      } else {
+        html += '<div class="textarea-wrap"><textarea name="' + fname + '" rows="3" placeholder="Напиши свой ответ..."></textarea></div>';
+      }
+      html += '</div>';
+    }
+
+    html += '<div class="nav-btns">';
+    if (i > 1) html += '<button type="button" class="btn btn-prev" onclick="showBlock(' + (i-1) + ')">← Назад</button>';
+    else html += '<span></span>';
+    if (i < TOTAL) html += '<button type="button" class="btn btn-next" onclick="showBlock(' + (i+1) + ')">Вперёд →</button>';
+    html += '</div>';
+
+    block.innerHTML = html;
+    cont.appendChild(block);
+  }
+  document.getElementById('tab1').classList.add('active');
+}
+
+function showBlock(n) {
+  document.querySelectorAll('.laugh-block').forEach(b => b.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  const block = document.getElementById('block' + n);
+  const tab = document.getElementById('tab' + n);
+  if (block) block.classList.add('active');
+  if (tab) { tab.classList.add('active'); tab.scrollIntoView({ block: 'nearest', inline: 'center' }); }
+}
+
+function countAnsweredBlocks() {
+  let filled = 0;
+  for (let i = 1; i <= TOTAL; i++) {
+    const block = document.getElementById('block' + i);
+    if (block && block.querySelector('input[type="radio"]:checked')) filled++;
+  }
+  return filled;
+}
+
+function updateProgress() {
+  const filled = countAnsweredBlocks();
+  const fill = document.getElementById('progressFill');
+  const label = document.getElementById('progressLabel');
+  if (fill) fill.style.width = (filled / TOTAL * 100) + '%';
+  if (label) label.textContent = filled + ' из ' + TOTAL + ' блоков заполнено';
+  for (let i = 1; i <= TOTAL; i++) {
+    const block = document.getElementById('block' + i);
+    const tab = document.getElementById('tab' + i);
+    if (block && tab) {
+      if (block.querySelector('input[type="radio"]:checked')) tab.classList.add('answered');
+      else tab.classList.remove('answered');
+    }
+  }
+}
+
+let savedData = {};
+
+async function submitForm(e) {
+  if (e) { e.preventDefault(); e.stopPropagation(); }
+
+  const form = document.getElementById('survey');
+  const btn = document.getElementById('submitBtn');
+  const errMsg = document.getElementById('errorMsg');
+  const successMsg = document.getElementById('successMsg');
+
+  const filled = countAnsweredBlocks();
+  if (filled < 15) {
+    errMsg.textContent = '❌ Заполнено ' + filled + ' из 30 блоков. Необходимо заполнить минимум 15.';
+    errMsg.style.display = 'block';
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    return false;
+  }
+
+  btn.disabled = true;
+  btn.textContent = '⏳ Сохранение...';
+  errMsg.style.display = 'none';
+
+  const formData = new FormData(form);
+  savedData = {};
+  for (const [key, val] of formData.entries()) {
+    if (savedData[key] !== undefined) {
+      savedData[key] = [].concat(savedData[key], val);
+    } else {
+      savedData[key] = val;
+    }
+  }
+  for (const k in savedData) {
+    if (Array.isArray(savedData[k])) savedData[k] = savedData[k].join('; ');
+  }
+  savedData.__submittedAt = new Date().toISOString();
+  savedData.__submissionId = Math.random().toString(36).slice(2) + Date.now();
+
+  try {
+    await fetch('https://script.google.com/macros/s/AKfycbx8yn9j0JX_Ltmwch-vOUTYtnFpG2-CC_RG5FjeH-63D83v-EsJ23wvoKmhrAZBwOyT/exec', {
+      method: 'POST',
+      mode: 'no-cors',
+      headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+      body: JSON.stringify(savedData)
+    });
+    form.style.display = 'none';
+    successMsg.style.display = 'block';
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  } catch (err) {
+    errMsg.textContent = '❌ Ошибка отправки: ' + err.message;
+    errMsg.style.display = 'block';
+    btn.disabled = false;
+    btn.textContent = '✓ Отправить ответы';
+  }
+  return false;
+}
+
+function downloadCSV() {
+  const keys = Object.keys(savedData);
+  const vals = keys.map(k => '"' + String(savedData[k]).replace(/"/g, '""') + '"');
+  const csv = '\uFEFF' + keys.map(k => '"' + k + '"').join(',') + '\n' + vals.join(',');
+  const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = 'смех_' + (savedData['Имя'] || 'ответ') + '.csv';
+  document.body.appendChild(a);
+  a.click();
+  a.remove();
+}
+
+document.addEventListener('change', function(ev) {
+  if (ev.target && ev.target.matches('input[type="radio"]')) updateProgress();
+});
+
+document.addEventListener('play', function(ev) {
+  if (!ev.target || ev.target.tagName !== 'AUDIO') return;
+  document.querySelectorAll('audio').forEach(function(a) {
+    if (a !== ev.target) { a.pause(); a.currentTime = 0; }
+  });
+}, true);
+
+document.addEventListener('DOMContentLoaded', function() {
+  buildBlocks();
+  updateProgress();
+});
+</script>
+
+</body>
+</html>
