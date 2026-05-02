@@ -92,14 +92,15 @@ header h1 { font-size: 1.4em; }
 </div>
 
 <script>
+const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxd4eWpnSSyeA3uRf4GNGZssov8n1s63OxcwwxxwvIGdFo6mbOPQFdeuG6mUZcziQRR/exec';
 const TOTAL = 30;
 const QUESTIONS = [
-  { key: 'тип',     label: 'Какой этот смех?',                          type: 'radio',    opts: ['Добрый','Нейтральный','Злой'] },
-  { key: 'ощуще',   label: 'Как тебе этот смех?',                       type: 'radio',    opts: ['Приятный','Безразлично','Неприятный'] },
-  { key: 'улыбка',  label: 'Хочется ли тебе улыбнуться или засмеяться вместе?', type: 'radio', opts: ['Да','Нет'] },
-  { key: 'искрен',  label: 'Как ты думаешь, ему/ей весело или он/она притворяется?', type: 'radio', opts: ['Весело','Притворяется'] },
-  { key: 'ситуац',  label: 'Кто и в какой ситуации смеётся?',           type: 'textarea' },
-  { key: 'рядом',   label: 'Хотел бы ты быть рядом с этим человеком?', type: 'radio',    opts: ['Да','Нет'] },
+  { key: 'тип',    label: 'Какой этот смех?',                                          type: 'radio',   opts: ['Добрый','Нейтральный','Злой'] },
+  { key: 'ощуще',  label: 'Как тебе этот смех?',                                       type: 'radio',   opts: ['Приятный','Безразлично','Неприятный'] },
+  { key: 'улыбка', label: 'Хочется ли тебе улыбнуться или засмеяться вместе?',         type: 'radio',   opts: ['Да','Нет'] },
+  { key: 'искрен', label: 'Как ты думаешь, ему/ей весело или он/она притворяется?',    type: 'radio',   opts: ['Весело','Притворяется'] },
+  { key: 'ситуац', label: 'Кто и в какой ситуации смеётся?',                           type: 'textarea' },
+  { key: 'рядом',  label: 'Хотел бы ты быть рядом с этим человеком?',                 type: 'radio',   opts: ['Да','Нет'] },
 ];
 
 function buildBlocks() {
@@ -191,8 +192,8 @@ let savedData = {};
 async function submitForm(e) {
   if (e) { e.preventDefault(); e.stopPropagation(); }
 
-  const form = document.getElementById('survey');
-  const btn = document.getElementById('submitBtn');
+  const form   = document.getElementById('survey');
+  const btn    = document.getElementById('submitBtn');
   const errMsg = document.getElementById('errorMsg');
   const successMsg = document.getElementById('successMsg');
 
@@ -208,27 +209,29 @@ async function submitForm(e) {
   btn.textContent = '⏳ Сохранение...';
   errMsg.style.display = 'none';
 
+  // Собираем данные из формы
   const formData = new FormData(form);
   savedData = {};
   for (const [key, val] of formData.entries()) {
-    if (savedData[key] !== undefined) {
-      savedData[key] = [].concat(savedData[key], val);
-    } else {
-      savedData[key] = val;
-    }
+    savedData[key] = savedData[key] !== undefined
+      ? [].concat(savedData[key], val)
+      : val;
   }
   for (const k in savedData) {
     if (Array.isArray(savedData[k])) savedData[k] = savedData[k].join('; ');
   }
-  savedData.__submittedAt = new Date().toISOString();
-  savedData.__submissionId = Math.random().toString(36).slice(2) + Date.now();
+  savedData['__время'] = new Date().toLocaleString('ru-RU');
+
+  // Отправляем как application/x-www-form-urlencoded
+  // Это «простой» запрос — preflight не нужен, e.parameter в Apps Script работает
+  const payload = new URLSearchParams(savedData).toString();
 
   try {
-    await fetch('https://script.google.com/macros/s/AKfycbxd4eWpnSSyeA3uRf4GNGZssov8n1s63OxcwwxxwvIGdFo6mbOPQFdeuG6mUZcziQRR/exec', {
+    await fetch(SCRIPT_URL, {
       method: 'POST',
       mode: 'no-cors',
-      headers: { 'Content-Type': 'text/plain;charset=utf-8' },
-      body: JSON.stringify(savedData)
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: payload
     });
     form.style.display = 'none';
     successMsg.style.display = 'block';
